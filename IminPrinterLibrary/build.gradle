@@ -39,7 +39,7 @@ dependencies {
  * 接口版本号
  */
 ext{
-    versionCode = 'V1.0.0.4'
+    versionCode = 'V1.0.0.5'
 }
 
 /**
@@ -86,16 +86,16 @@ task makeJar(type: Copy) {
 }
 makeJar.dependsOn(build)
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            // Creates a Maven publication called "release".
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.imin.printer'
-//                artifactId = 'library'
-//                version = '0.0.1'
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.imin.printer'
+                artifactId = 'library'
+                version = 'V1.0.0.5'
+            }
+        }
+    }
+}
