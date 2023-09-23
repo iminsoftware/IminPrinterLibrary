@@ -39,7 +39,7 @@ dependencies {
  * 接口版本号
  */
 ext{
-    versionCode = 'V1.0.0.5'
+    versionCode = 'V1.0.0.7'
 }
 
 /**
@@ -88,13 +88,14 @@ makeJar.dependsOn(build)
 
 afterEvaluate {
     publishing {
+        println "afterEvaluta被调用"
         publications {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.imin.printer'
                 artifactId = 'library'
-                version = 'V1.0.0.5'
+                version = 'V1.0.0.7'
             }
         }
     }

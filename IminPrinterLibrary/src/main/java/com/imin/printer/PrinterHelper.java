@@ -21,11 +21,13 @@ public class PrinterHelper {
     public static INeoPrinterService getNeoPrinterService(){
         return iNeoPrinterService;
     }
+    private Context mContext;
 
     /**
      * init  print service
      */
     public boolean initPrinterService(Context context){
+        mContext = context;
         boolean result = NeoPrinterManager.getInstance().bindService(context,serviceConnectionCallback);
         Log.d(TAG,result ? "绑定服务成功" : "绑定服务失败");
         return result;
@@ -43,6 +45,7 @@ public class PrinterHelper {
         protected void onConnected(INeoPrinterService service) {
             iNeoPrinterService = service;
             Log.d(TAG,"绑定AIDL服务成功");
+            initPrinter(mContext.getApplicationContext().getPackageName(), null);
         }
 
         @Override
@@ -53,7 +56,8 @@ public class PrinterHelper {
     };
     int fd;
     public void initPrinter(String packageName,INeoPrinterCallback callback){
-        if (iNeoPrinterService == null)return;
+        Log.d(TAG,"绑定服务成功"+(iNeoPrinterService == null || packageName == null || packageName.equals("") || packageName.length() == 0)+"    "+packageName);
+        if (iNeoPrinterService == null || packageName == null || packageName.equals("") || packageName.length() == 0)return;
         try {
             fd = iNeoPrinterService.initPrinter(packageName, callback);
         } catch (RemoteException e) {
