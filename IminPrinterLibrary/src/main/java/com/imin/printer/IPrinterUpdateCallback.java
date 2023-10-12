@@ -5,7 +5,7 @@ package com.imin.printer;
 public interface IPrinterUpdateCallback extends android.os.IInterface
 {
   /** Default implementation for IPrinterUpdateCallback. */
-  public static class Default implements IPrinterUpdateCallback
+  public static class Default implements com.imin.printer.IPrinterUpdateCallback
   {
     /**
          *
@@ -43,10 +43,10 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
          * 115  升级成功
          * @param message
          */
-    @Override public void printerUpdateStatus(int status, int arg, String message) throws android.os.RemoteException
+    @Override public void printerUpdateStatus(int status, int arg, java.lang.String message) throws android.os.RemoteException
     {
     }
-    @Override public void error(String msg) throws android.os.RemoteException
+    @Override public void error(java.lang.String msg) throws android.os.RemoteException
     {
     }
     @Override
@@ -55,9 +55,9 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
     }
   }
   /** Local-side IPC implementation stub class. */
-  public static abstract class Stub extends android.os.Binder implements IPrinterUpdateCallback
+  public static abstract class Stub extends android.os.Binder implements com.imin.printer.IPrinterUpdateCallback
   {
-    private static final String DESCRIPTOR = "com.imin.printer.IPrinterUpdateCallback";
+    private static final java.lang.String DESCRIPTOR = "com.imin.printer.IPrinterUpdateCallback";
     /** Construct the stub at attach it to the interface. */
     public Stub()
     {
@@ -67,16 +67,16 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
      * Cast an IBinder object into an com.imin.printer.IPrinterUpdateCallback interface,
      * generating a proxy if needed.
      */
-    public static IPrinterUpdateCallback asInterface(android.os.IBinder obj)
+    public static com.imin.printer.IPrinterUpdateCallback asInterface(android.os.IBinder obj)
     {
       if ((obj==null)) {
         return null;
       }
       android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-      if (((iin!=null)&&(iin instanceof IPrinterUpdateCallback))) {
-        return ((IPrinterUpdateCallback)iin);
+      if (((iin!=null)&&(iin instanceof com.imin.printer.IPrinterUpdateCallback))) {
+        return ((com.imin.printer.IPrinterUpdateCallback)iin);
       }
-      return new Proxy(obj);
+      return new com.imin.printer.IPrinterUpdateCallback.Stub.Proxy(obj);
     }
     @Override public android.os.IBinder asBinder()
     {
@@ -84,7 +84,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
     }
     @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
     {
-      String descriptor = DESCRIPTOR;
+      java.lang.String descriptor = DESCRIPTOR;
       switch (code)
       {
         case INTERFACE_TRANSACTION:
@@ -99,7 +99,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
           _arg0 = data.readInt();
           int _arg1;
           _arg1 = data.readInt();
-          String _arg2;
+          java.lang.String _arg2;
           _arg2 = data.readString();
           this.printerUpdateStatus(_arg0, _arg1, _arg2);
           reply.writeNoException();
@@ -108,7 +108,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
         case TRANSACTION_error:
         {
           data.enforceInterface(descriptor);
-          String _arg0;
+          java.lang.String _arg0;
           _arg0 = data.readString();
           this.error(_arg0);
           reply.writeNoException();
@@ -120,7 +120,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
         }
       }
     }
-    private static class Proxy implements IPrinterUpdateCallback
+    private static class Proxy implements com.imin.printer.IPrinterUpdateCallback
     {
       private android.os.IBinder mRemote;
       Proxy(android.os.IBinder remote)
@@ -131,7 +131,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
       {
         return mRemote;
       }
-      public String getInterfaceDescriptor()
+      public java.lang.String getInterfaceDescriptor()
       {
         return DESCRIPTOR;
       }
@@ -171,7 +171,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
            * 115  升级成功
            * @param message
            */
-      @Override public void printerUpdateStatus(int status, int arg, String message) throws android.os.RemoteException
+      @Override public void printerUpdateStatus(int status, int arg, java.lang.String message) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -192,7 +192,7 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void error(String msg) throws android.os.RemoteException
+      @Override public void error(java.lang.String msg) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -211,25 +211,25 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
           _data.recycle();
         }
       }
-      public static IPrinterUpdateCallback sDefaultImpl;
+      public static com.imin.printer.IPrinterUpdateCallback sDefaultImpl;
     }
     static final int TRANSACTION_printerUpdateStatus = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
     static final int TRANSACTION_error = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
-    public static boolean setDefaultImpl(IPrinterUpdateCallback impl) {
+    public static boolean setDefaultImpl(com.imin.printer.IPrinterUpdateCallback impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
       // users in the same process use this function.
-      if (Proxy.sDefaultImpl != null) {
+      if (Stub.Proxy.sDefaultImpl != null) {
         throw new IllegalStateException("setDefaultImpl() called twice");
       }
       if (impl != null) {
-        Proxy.sDefaultImpl = impl;
+        Stub.Proxy.sDefaultImpl = impl;
         return true;
       }
       return false;
     }
-    public static IPrinterUpdateCallback getDefaultImpl() {
-      return Proxy.sDefaultImpl;
+    public static com.imin.printer.IPrinterUpdateCallback getDefaultImpl() {
+      return Stub.Proxy.sDefaultImpl;
     }
   }
   /**
@@ -268,6 +268,6 @@ public interface IPrinterUpdateCallback extends android.os.IInterface
        * 115  升级成功
        * @param message
        */
-  public void printerUpdateStatus(int status, int arg, String message) throws android.os.RemoteException;
-  public void error(String msg) throws android.os.RemoteException;
+  public void printerUpdateStatus(int status, int arg, java.lang.String message) throws android.os.RemoteException;
+  public void error(java.lang.String msg) throws android.os.RemoteException;
 }

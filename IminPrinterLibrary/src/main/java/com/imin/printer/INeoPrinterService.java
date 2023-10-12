@@ -5,28 +5,28 @@ package com.imin.printer;
 public interface INeoPrinterService extends android.os.IInterface
 {
   /** Default implementation for INeoPrinterService. */
-  public static class Default implements INeoPrinterService
+  public static class Default implements com.imin.printer.INeoPrinterService
   {
-    @Override public int initPrinter(String packageName, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public int initPrinter(java.lang.String packageName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
       return 0;
     }
     @Override public void initPrinterParams(int fd) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterSerialNumber(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterSerialNumber(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterModelName(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterModelName(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterThermalHead(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterThermalHead(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterFirmwareVersion(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterFirmwareVersion(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public String getServiceVersion(int fd) throws android.os.RemoteException
+    @Override public java.lang.String getServiceVersion(int fd) throws android.os.RemoteException
     {
       return null;
     }
@@ -34,11 +34,11 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return 0;
     }
-    @Override public String getUsbPrinterVidPid(int fd) throws android.os.RemoteException
+    @Override public java.lang.String getUsbPrinterVidPid(int fd) throws android.os.RemoteException
     {
       return null;
     }
-    @Override public String getUsbDevicesName(int fd) throws android.os.RemoteException
+    @Override public java.lang.String getUsbDevicesName(int fd) throws android.os.RemoteException
     {
       return null;
     }
@@ -56,10 +56,10 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return 0;
     }
-    @Override public void getPrinterPaperDistance(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterPaperDistance(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterCutTimes(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterCutTimes(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setPageFormat(int fd, int format) throws android.os.RemoteException
@@ -87,10 +87,10 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return 0;
     }
-    @Override public void printerSelfChecking(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printerSelfChecking(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void sendRAWData(int fd, byte[] bytes, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void sendRAWData(int fd, byte[] bytes, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void enterPrinterBuffer(int fd, boolean clean) throws android.os.RemoteException
@@ -99,13 +99,13 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void commitPrinterBuffer(int fd) throws android.os.RemoteException
     {
     }
-    @Override public void commitPrinterBufferWithCallback(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void commitPrinterBufferWithCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void exitPrinterBuffer(int fd, boolean commit) throws android.os.RemoteException
     {
     }
-    @Override public void exitPrinterBufferWithCallback(int fd, boolean commit, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void exitPrinterBufferWithCallback(int fd, boolean commit, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setDebugLogLevel(int fd, int level) throws android.os.RemoteException
@@ -114,10 +114,10 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void setDebugLogSize(int fd, int size) throws android.os.RemoteException
     {
     }
-    @Override public void setDebugLogModule(int fd, String module, boolean isOpen) throws android.os.RemoteException
+    @Override public void setDebugLogModule(int fd, java.lang.String module, boolean isOpen) throws android.os.RemoteException
     {
     }
-    @Override public String getDebugLogState(int fd) throws android.os.RemoteException
+    @Override public java.lang.String getDebugLogState(int fd) throws android.os.RemoteException
     {
       return null;
     }
@@ -181,27 +181,27 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void setFontCodepage(int fd, int codepage) throws android.os.RemoteException
     {
     }
-    @Override public java.util.List<String> getFontCountryCode(int fd) throws android.os.RemoteException
+    @Override public java.util.List<java.lang.String> getFontCountryCode(int fd) throws android.os.RemoteException
     {
       return null;
     }
-    @Override public java.util.List<String> getFontCodepage(int fd) throws android.os.RemoteException
+    @Override public java.util.List<java.lang.String> getFontCodepage(int fd) throws android.os.RemoteException
     {
       return null;
     }
-    @Override public void printText(int fd, String text, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printText(int fd, java.lang.String text, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printTextWithAli(int fd, String text, int anInt, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printTextWithAli(int fd, java.lang.String text, int anInt, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printTextWithEncode(int fd, String text, String code, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printTextWithEncode(int fd, java.lang.String text, java.lang.String code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setCodeAlignment(int fd, int alignmentMode) throws android.os.RemoteException
     {
     }
-    @Override public void setTextBitmapTypeface(int fd, String typeface) throws android.os.RemoteException
+    @Override public void setTextBitmapTypeface(int fd, java.lang.String typeface) throws android.os.RemoteException
     {
     }
     @Override public void setTextBitmapSize(int fd, int size) throws android.os.RemoteException
@@ -225,28 +225,28 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void setTextBitmapAntiWhite(int fd, boolean antiWhite) throws android.os.RemoteException
     {
     }
-    @Override public void printTextBitmap(int fd, String text, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printTextBitmap(int fd, java.lang.String text, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printTextBitmapWithAli(int fd, String text, int align, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printTextBitmapWithAli(int fd, java.lang.String text, int align, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printBitmap(int fd, android.graphics.Bitmap bitmap, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBitmap(int fd, android.graphics.Bitmap bitmap, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printBitmapWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBitmapWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printMultiBitmap(int fd, java.util.List<android.graphics.Bitmap> bitmaps, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printMultiBitmap(int fd, java.util.List<android.graphics.Bitmap> bitmaps, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printMultiBitmapWithAlign(int fd, java.util.List<android.graphics.Bitmap> bitmaps, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printMultiBitmapWithAlign(int fd, java.util.List<android.graphics.Bitmap> bitmaps, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printColumnsText(int fd, String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printColumnsText(int fd, java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printColumnsString(int fd, String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printColumnsString(int fd, java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setBarCodeWidth(int fd, int width) throws android.os.RemoteException
@@ -258,13 +258,13 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void setBarCodeContentPrintPos(int fd, int pos) throws android.os.RemoteException
     {
     }
-    @Override public void printBarCodeWithFull(int fd, String data, int barCodeType, int width, int height, int textposition, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBarCodeWithFull(int fd, java.lang.String data, int barCodeType, int width, int height, int textposition, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printBarCode(int fd, String data, int barCodeType, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBarCode(int fd, java.lang.String data, int barCodeType, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printBarCodeWithAlign(int fd, String data, int barCodeType, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBarCodeWithAlign(int fd, java.lang.String data, int barCodeType, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setQrCodeSize(int fd, int size) throws android.os.RemoteException
@@ -276,13 +276,13 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void setLeftMargin(int fd, int valve) throws android.os.RemoteException
     {
     }
-    @Override public void printQRCodeWithFull(int fd, String data, int size, int errorlevel, int alignments, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printQRCodeWithFull(int fd, java.lang.String data, int size, int errorlevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printQrCode(int fd, String data, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printQrCode(int fd, java.lang.String data, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printQrCodeWithAlign(int fd, String data, int alignments, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printQrCodeWithAlign(int fd, java.lang.String data, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setDoubleQRSize(int fd, int size) throws android.os.RemoteException
@@ -306,35 +306,35 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void setDoubleQR2Version(int fd, int qr2Version) throws android.os.RemoteException
     {
     }
-    @Override public void printDoubleQR(int fd, String qr1Data, String qr2Data, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printDoubleQR(int fd, java.lang.String qr1Data, java.lang.String qr2Data, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public String getPrinterUpdatePath(int fd) throws android.os.RemoteException
+    @Override public java.lang.String getPrinterUpdatePath(int fd) throws android.os.RemoteException
     {
       return null;
     }
-    @Override public void setPrinterUpdatePath(int fd, String path) throws android.os.RemoteException
+    @Override public void setPrinterUpdatePath(int fd, java.lang.String path) throws android.os.RemoteException
     {
     }
     @Override public void startPrinterUpdate(int fd) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterUpdateStatus(int fd, IPrinterUpdateCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterUpdateStatus(int fd, com.imin.printer.IPrinterUpdateCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setIsUpdatePrinter(int fd, int update) throws android.os.RemoteException
     {
     }
-    @Override public void printBitmapColorChart(int fd, android.graphics.Bitmap bitmap, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBitmapColorChart(int fd, android.graphics.Bitmap bitmap, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void printBitmapColorChartWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void printBitmapColorChartWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterHardwareVersion(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterHardwareVersion(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public int getPrinterIsUpdateStatus(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public int getPrinterIsUpdateStatus(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
       return 0;
     }
@@ -348,13 +348,13 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return 0;
     }
-    @Override public void getConfigurationInfo(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getConfigurationInfo(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterKnifeReset(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterKnifeReset(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void getPrinterTemperature(int fd, IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void getPrinterTemperature(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override public void setConnectInternalPrinter(int fd, boolean connect) throws android.os.RemoteException
@@ -367,15 +367,35 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void checkUpdateFirmware(int fd) throws android.os.RemoteException
     {
     }
+    @Override public java.util.List<java.lang.String> getPrinterDensityList(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.util.List<java.lang.String> getPrinterSpeedList(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.util.List<java.lang.String> getPrinterPaperTypeList(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.util.List<java.lang.String> getPrinterPatternList(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public boolean supportCashBox(int fd) throws android.os.RemoteException
+    {
+      return false;
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
     }
   }
   /** Local-side IPC implementation stub class. */
-  public static abstract class Stub extends android.os.Binder implements INeoPrinterService
+  public static abstract class Stub extends android.os.Binder implements com.imin.printer.INeoPrinterService
   {
-    private static final String DESCRIPTOR = "com.imin.printer.INeoPrinterService";
+    private static final java.lang.String DESCRIPTOR = "com.imin.printer.INeoPrinterService";
     /** Construct the stub at attach it to the interface. */
     public Stub()
     {
@@ -385,16 +405,16 @@ public interface INeoPrinterService extends android.os.IInterface
      * Cast an IBinder object into an com.imin.printer.INeoPrinterService interface,
      * generating a proxy if needed.
      */
-    public static INeoPrinterService asInterface(android.os.IBinder obj)
+    public static com.imin.printer.INeoPrinterService asInterface(android.os.IBinder obj)
     {
       if ((obj==null)) {
         return null;
       }
       android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-      if (((iin!=null)&&(iin instanceof INeoPrinterService))) {
-        return ((INeoPrinterService)iin);
+      if (((iin!=null)&&(iin instanceof com.imin.printer.INeoPrinterService))) {
+        return ((com.imin.printer.INeoPrinterService)iin);
       }
-      return new Proxy(obj);
+      return new com.imin.printer.INeoPrinterService.Stub.Proxy(obj);
     }
     @Override public android.os.IBinder asBinder()
     {
@@ -402,7 +422,7 @@ public interface INeoPrinterService extends android.os.IInterface
     }
     @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
     {
-      String descriptor = DESCRIPTOR;
+      java.lang.String descriptor = DESCRIPTOR;
       switch (code)
       {
         case INTERFACE_TRANSACTION:
@@ -413,10 +433,10 @@ public interface INeoPrinterService extends android.os.IInterface
         case TRANSACTION_initPrinter:
         {
           data.enforceInterface(descriptor);
-          String _arg0;
+          java.lang.String _arg0;
           _arg0 = data.readString();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           int _result = this.initPrinter(_arg0, _arg1);
           reply.writeNoException();
           reply.writeInt(_result);
@@ -436,8 +456,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterSerialNumber(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -447,8 +467,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterModelName(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -458,8 +478,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterThermalHead(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -469,8 +489,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterFirmwareVersion(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -480,7 +500,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _result = this.getServiceVersion(_arg0);
+          java.lang.String _result = this.getServiceVersion(_arg0);
           reply.writeNoException();
           reply.writeString(_result);
           return true;
@@ -500,7 +520,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _result = this.getUsbPrinterVidPid(_arg0);
+          java.lang.String _result = this.getUsbPrinterVidPid(_arg0);
           reply.writeNoException();
           reply.writeString(_result);
           return true;
@@ -510,7 +530,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _result = this.getUsbDevicesName(_arg0);
+          java.lang.String _result = this.getUsbDevicesName(_arg0);
           reply.writeNoException();
           reply.writeString(_result);
           return true;
@@ -562,8 +582,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterPaperDistance(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -573,8 +593,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterCutTimes(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -655,8 +675,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printerSelfChecking(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -668,8 +688,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg0 = data.readInt();
           byte[] _arg1;
           _arg1 = data.createByteArray();
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.sendRAWData(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -699,8 +719,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.commitPrinterBufferWithCallback(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -723,8 +743,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg0 = data.readInt();
           boolean _arg1;
           _arg1 = (0!=data.readInt());
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.exitPrinterBufferWithCallback(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -756,7 +776,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           boolean _arg2;
           _arg2 = (0!=data.readInt());
@@ -769,7 +789,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _result = this.getDebugLogState(_arg0);
+          java.lang.String _result = this.getDebugLogState(_arg0);
           reply.writeNoException();
           reply.writeString(_result);
           return true;
@@ -1009,7 +1029,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          java.util.List<String> _result = this.getFontCountryCode(_arg0);
+          java.util.List<java.lang.String> _result = this.getFontCountryCode(_arg0);
           reply.writeNoException();
           reply.writeStringList(_result);
           return true;
@@ -1019,7 +1039,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          java.util.List<String> _result = this.getFontCodepage(_arg0);
+          java.util.List<java.lang.String> _result = this.getFontCodepage(_arg0);
           reply.writeNoException();
           reply.writeStringList(_result);
           return true;
@@ -1029,10 +1049,10 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printText(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -1042,12 +1062,12 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printTextWithAli(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1057,12 +1077,12 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
-          String _arg2;
+          java.lang.String _arg2;
           _arg2 = data.readString();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printTextWithEncode(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1083,7 +1103,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           this.setTextBitmapTypeface(_arg0, _arg1);
           reply.writeNoException();
@@ -1171,10 +1191,10 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printTextBitmap(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -1184,12 +1204,12 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printTextBitmapWithAli(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1206,8 +1226,8 @@ public interface INeoPrinterService extends android.os.IInterface
           else {
             _arg1 = null;
           }
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBitmap(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -1226,8 +1246,8 @@ public interface INeoPrinterService extends android.os.IInterface
           }
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBitmapWithAlign(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1239,8 +1259,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg0 = data.readInt();
           java.util.List<android.graphics.Bitmap> _arg1;
           _arg1 = data.createTypedArrayList(android.graphics.Bitmap.CREATOR);
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printMultiBitmap(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -1254,8 +1274,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg1 = data.createTypedArrayList(android.graphics.Bitmap.CREATOR);
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printMultiBitmapWithAlign(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1265,7 +1285,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String[] _arg1;
+          java.lang.String[] _arg1;
           _arg1 = data.createStringArray();
           int[] _arg2;
           _arg2 = data.createIntArray();
@@ -1273,8 +1293,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg3 = data.createIntArray();
           int[] _arg4;
           _arg4 = data.createIntArray();
-          IPrinterCallback _arg5;
-          _arg5 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg5;
+          _arg5 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printColumnsText(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5);
           reply.writeNoException();
           return true;
@@ -1284,7 +1304,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String[] _arg1;
+          java.lang.String[] _arg1;
           _arg1 = data.createStringArray();
           int[] _arg2;
           _arg2 = data.createIntArray();
@@ -1292,8 +1312,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg3 = data.createIntArray();
           int[] _arg4;
           _arg4 = data.createIntArray();
-          IPrinterCallback _arg5;
-          _arg5 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg5;
+          _arg5 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printColumnsString(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5);
           reply.writeNoException();
           return true;
@@ -1336,7 +1356,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
@@ -1348,8 +1368,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg5 = data.readInt();
           int _arg6;
           _arg6 = data.readInt();
-          IPrinterCallback _arg7;
-          _arg7 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg7;
+          _arg7 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBarCodeWithFull(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7);
           reply.writeNoException();
           return true;
@@ -1359,12 +1379,12 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBarCode(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1374,14 +1394,14 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
           int _arg3;
           _arg3 = data.readInt();
-          IPrinterCallback _arg4;
-          _arg4 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg4;
+          _arg4 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBarCodeWithAlign(_arg0, _arg1, _arg2, _arg3, _arg4);
           reply.writeNoException();
           return true;
@@ -1424,7 +1444,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
@@ -1432,8 +1452,8 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg3 = data.readInt();
           int _arg4;
           _arg4 = data.readInt();
-          IPrinterCallback _arg5;
-          _arg5 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg5;
+          _arg5 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printQRCodeWithFull(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5);
           reply.writeNoException();
           return true;
@@ -1443,10 +1463,10 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printQrCode(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -1456,12 +1476,12 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printQrCodeWithAlign(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1548,12 +1568,12 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
-          String _arg2;
+          java.lang.String _arg2;
           _arg2 = data.readString();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printDoubleQR(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1563,7 +1583,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _result = this.getPrinterUpdatePath(_arg0);
+          java.lang.String _result = this.getPrinterUpdatePath(_arg0);
           reply.writeNoException();
           reply.writeString(_result);
           return true;
@@ -1573,7 +1593,7 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           this.setPrinterUpdatePath(_arg0, _arg1);
           reply.writeNoException();
@@ -1593,8 +1613,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterUpdateCallback _arg1;
-          _arg1 = IPrinterUpdateCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterUpdateCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterUpdateCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterUpdateStatus(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -1622,8 +1642,8 @@ public interface INeoPrinterService extends android.os.IInterface
           else {
             _arg1 = null;
           }
-          IPrinterCallback _arg2;
-          _arg2 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBitmapColorChart(_arg0, _arg1, _arg2);
           reply.writeNoException();
           return true;
@@ -1642,8 +1662,8 @@ public interface INeoPrinterService extends android.os.IInterface
           }
           int _arg2;
           _arg2 = data.readInt();
-          IPrinterCallback _arg3;
-          _arg3 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.printBitmapColorChartWithAlign(_arg0, _arg1, _arg2, _arg3);
           reply.writeNoException();
           return true;
@@ -1653,8 +1673,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterHardwareVersion(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -1664,8 +1684,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           int _result = this.getPrinterIsUpdateStatus(_arg0, _arg1);
           reply.writeNoException();
           reply.writeInt(_result);
@@ -1706,8 +1726,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getConfigurationInfo(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -1717,8 +1737,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterKnifeReset(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -1728,8 +1748,8 @@ public interface INeoPrinterService extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          IPrinterCallback _arg1;
-          _arg1 = IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.getPrinterTemperature(_arg0, _arg1);
           reply.writeNoException();
           return true;
@@ -1764,13 +1784,63 @@ public interface INeoPrinterService extends android.os.IInterface
           reply.writeNoException();
           return true;
         }
+        case TRANSACTION_getPrinterDensityList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.util.List<java.lang.String> _result = this.getPrinterDensityList(_arg0);
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_getPrinterSpeedList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.util.List<java.lang.String> _result = this.getPrinterSpeedList(_arg0);
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_getPrinterPaperTypeList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.util.List<java.lang.String> _result = this.getPrinterPaperTypeList(_arg0);
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_getPrinterPatternList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.util.List<java.lang.String> _result = this.getPrinterPatternList(_arg0);
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_supportCashBox:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          boolean _result = this.supportCashBox(_arg0);
+          reply.writeNoException();
+          reply.writeInt(((_result)?(1):(0)));
+          return true;
+        }
         default:
         {
           return super.onTransact(code, data, reply, flags);
         }
       }
     }
-    private static class Proxy implements INeoPrinterService
+    private static class Proxy implements com.imin.printer.INeoPrinterService
     {
       private android.os.IBinder mRemote;
       Proxy(android.os.IBinder remote)
@@ -1781,11 +1851,11 @@ public interface INeoPrinterService extends android.os.IInterface
       {
         return mRemote;
       }
-      public String getInterfaceDescriptor()
+      public java.lang.String getInterfaceDescriptor()
       {
         return DESCRIPTOR;
       }
-      @Override public int initPrinter(String packageName, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public int initPrinter(java.lang.String packageName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1826,7 +1896,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterSerialNumber(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterSerialNumber(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1846,7 +1916,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterModelName(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterModelName(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1866,7 +1936,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterThermalHead(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterThermalHead(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1886,7 +1956,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterFirmwareVersion(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterFirmwareVersion(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1906,11 +1976,11 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public String getServiceVersion(int fd) throws android.os.RemoteException
+      @Override public java.lang.String getServiceVersion(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        String _result;
+        java.lang.String _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -1948,11 +2018,11 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public String getUsbPrinterVidPid(int fd) throws android.os.RemoteException
+      @Override public java.lang.String getUsbPrinterVidPid(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        String _result;
+        java.lang.String _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -1969,11 +2039,11 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public String getUsbDevicesName(int fd) throws android.os.RemoteException
+      @Override public java.lang.String getUsbDevicesName(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        String _result;
+        java.lang.String _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -2072,7 +2142,7 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public void getPrinterPaperDistance(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterPaperDistance(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2092,7 +2162,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterCutTimes(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterCutTimes(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2255,7 +2325,7 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public void printerSelfChecking(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printerSelfChecking(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2275,7 +2345,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void sendRAWData(int fd, byte[] bytes, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void sendRAWData(int fd, byte[] bytes, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2335,7 +2405,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void commitPrinterBufferWithCallback(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void commitPrinterBufferWithCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2375,7 +2445,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void exitPrinterBufferWithCallback(int fd, boolean commit, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void exitPrinterBufferWithCallback(int fd, boolean commit, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2436,7 +2506,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void setDebugLogModule(int fd, String module, boolean isOpen) throws android.os.RemoteException
+      @Override public void setDebugLogModule(int fd, java.lang.String module, boolean isOpen) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2457,11 +2527,11 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public String getDebugLogState(int fd) throws android.os.RemoteException
+      @Override public java.lang.String getDebugLogState(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        String _result;
+        java.lang.String _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -2883,11 +2953,11 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public java.util.List<String> getFontCountryCode(int fd) throws android.os.RemoteException
+      @Override public java.util.List<java.lang.String> getFontCountryCode(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        java.util.List<String> _result;
+        java.util.List<java.lang.String> _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -2904,11 +2974,11 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public java.util.List<String> getFontCodepage(int fd) throws android.os.RemoteException
+      @Override public java.util.List<java.lang.String> getFontCodepage(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        java.util.List<String> _result;
+        java.util.List<java.lang.String> _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -2925,7 +2995,7 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public void printText(int fd, String text, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printText(int fd, java.lang.String text, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2946,7 +3016,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printTextWithAli(int fd, String text, int anInt, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printTextWithAli(int fd, java.lang.String text, int anInt, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -2968,7 +3038,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printTextWithEncode(int fd, String text, String code, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printTextWithEncode(int fd, java.lang.String text, java.lang.String code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3010,7 +3080,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void setTextBitmapTypeface(int fd, String typeface) throws android.os.RemoteException
+      @Override public void setTextBitmapTypeface(int fd, java.lang.String typeface) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3170,7 +3240,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printTextBitmap(int fd, String text, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printTextBitmap(int fd, java.lang.String text, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3191,7 +3261,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printTextBitmapWithAli(int fd, String text, int align, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printTextBitmapWithAli(int fd, java.lang.String text, int align, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3213,7 +3283,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBitmap(int fd, android.graphics.Bitmap bitmap, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBitmap(int fd, android.graphics.Bitmap bitmap, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3240,7 +3310,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBitmapWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBitmapWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3268,7 +3338,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printMultiBitmap(int fd, java.util.List<android.graphics.Bitmap> bitmaps, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printMultiBitmap(int fd, java.util.List<android.graphics.Bitmap> bitmaps, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3289,7 +3359,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printMultiBitmapWithAlign(int fd, java.util.List<android.graphics.Bitmap> bitmaps, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printMultiBitmapWithAlign(int fd, java.util.List<android.graphics.Bitmap> bitmaps, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3311,7 +3381,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printColumnsText(int fd, String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printColumnsText(int fd, java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3335,7 +3405,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printColumnsString(int fd, String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printColumnsString(int fd, java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3419,7 +3489,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBarCodeWithFull(int fd, String data, int barCodeType, int width, int height, int textposition, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBarCodeWithFull(int fd, java.lang.String data, int barCodeType, int width, int height, int textposition, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3445,7 +3515,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBarCode(int fd, String data, int barCodeType, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBarCode(int fd, java.lang.String data, int barCodeType, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3467,7 +3537,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBarCodeWithAlign(int fd, String data, int barCodeType, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBarCodeWithAlign(int fd, java.lang.String data, int barCodeType, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3550,7 +3620,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printQRCodeWithFull(int fd, String data, int size, int errorlevel, int alignments, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printQRCodeWithFull(int fd, java.lang.String data, int size, int errorlevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3574,7 +3644,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printQrCode(int fd, String data, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printQrCode(int fd, java.lang.String data, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3595,7 +3665,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printQrCodeWithAlign(int fd, String data, int alignments, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printQrCodeWithAlign(int fd, java.lang.String data, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3757,7 +3827,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printDoubleQR(int fd, String qr1Data, String qr2Data, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printDoubleQR(int fd, java.lang.String qr1Data, java.lang.String qr2Data, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3779,11 +3849,11 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public String getPrinterUpdatePath(int fd) throws android.os.RemoteException
+      @Override public java.lang.String getPrinterUpdatePath(int fd) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
-        String _result;
+        java.lang.String _result;
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
           _data.writeInt(fd);
@@ -3800,7 +3870,7 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public void setPrinterUpdatePath(int fd, String path) throws android.os.RemoteException
+      @Override public void setPrinterUpdatePath(int fd, java.lang.String path) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3839,7 +3909,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterUpdateStatus(int fd, IPrinterUpdateCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterUpdateStatus(int fd, com.imin.printer.IPrinterUpdateCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3879,7 +3949,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBitmapColorChart(int fd, android.graphics.Bitmap bitmap, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBitmapColorChart(int fd, android.graphics.Bitmap bitmap, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3906,7 +3976,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void printBitmapColorChartWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void printBitmapColorChartWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3934,7 +4004,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterHardwareVersion(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterHardwareVersion(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -3954,7 +4024,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public int getPrinterIsUpdateStatus(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public int getPrinterIsUpdateStatus(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -4036,7 +4106,7 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
-      @Override public void getConfigurationInfo(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getConfigurationInfo(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -4056,7 +4126,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterKnifeReset(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterKnifeReset(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -4076,7 +4146,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void getPrinterTemperature(int fd, IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void getPrinterTemperature(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -4156,7 +4226,112 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      public static INeoPrinterService sDefaultImpl;
+      @Override public java.util.List<java.lang.String> getPrinterDensityList(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterDensityList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterDensityList(fd);
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.util.List<java.lang.String> getPrinterSpeedList(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterSpeedList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterSpeedList(fd);
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.util.List<java.lang.String> getPrinterPaperTypeList(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterPaperTypeList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterPaperTypeList(fd);
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.util.List<java.lang.String> getPrinterPatternList(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterPatternList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterPatternList(fd);
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public boolean supportCashBox(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        boolean _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_supportCashBox, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().supportCashBox(fd);
+          }
+          _reply.readException();
+          _result = (0!=_reply.readInt());
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      public static com.imin.printer.INeoPrinterService sDefaultImpl;
     }
     static final int TRANSACTION_initPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
     static final int TRANSACTION_initPrinterParams = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
@@ -4272,39 +4447,44 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_setConnectInternalPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 111);
     static final int TRANSACTION_getConnectInternalPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 112);
     static final int TRANSACTION_checkUpdateFirmware = (android.os.IBinder.FIRST_CALL_TRANSACTION + 113);
-    public static boolean setDefaultImpl(INeoPrinterService impl) {
+    static final int TRANSACTION_getPrinterDensityList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 114);
+    static final int TRANSACTION_getPrinterSpeedList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 115);
+    static final int TRANSACTION_getPrinterPaperTypeList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 116);
+    static final int TRANSACTION_getPrinterPatternList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 117);
+    static final int TRANSACTION_supportCashBox = (android.os.IBinder.FIRST_CALL_TRANSACTION + 118);
+    public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
       // users in the same process use this function.
-      if (Proxy.sDefaultImpl != null) {
+      if (Stub.Proxy.sDefaultImpl != null) {
         throw new IllegalStateException("setDefaultImpl() called twice");
       }
       if (impl != null) {
-        Proxy.sDefaultImpl = impl;
+        Stub.Proxy.sDefaultImpl = impl;
         return true;
       }
       return false;
     }
-    public static INeoPrinterService getDefaultImpl() {
-      return Proxy.sDefaultImpl;
+    public static com.imin.printer.INeoPrinterService getDefaultImpl() {
+      return Stub.Proxy.sDefaultImpl;
     }
   }
-  public int initPrinter(String packageName, IPrinterCallback callback) throws android.os.RemoteException;
+  public int initPrinter(java.lang.String packageName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void initPrinterParams(int fd) throws android.os.RemoteException;
-  public void getPrinterSerialNumber(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterModelName(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterThermalHead(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterFirmwareVersion(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public String getServiceVersion(int fd) throws android.os.RemoteException;
+  public void getPrinterSerialNumber(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterModelName(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterThermalHead(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterFirmwareVersion(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public java.lang.String getServiceVersion(int fd) throws android.os.RemoteException;
   public int getPrinterStatus(int fd) throws android.os.RemoteException;
-  public String getUsbPrinterVidPid(int fd) throws android.os.RemoteException;
-  public String getUsbDevicesName(int fd) throws android.os.RemoteException;
+  public java.lang.String getUsbPrinterVidPid(int fd) throws android.os.RemoteException;
+  public java.lang.String getUsbDevicesName(int fd) throws android.os.RemoteException;
   public void setPrinterDensity(int fd, int density) throws android.os.RemoteException;
   public int getPrinterDensity(int fd) throws android.os.RemoteException;
   public void setPrinterSpeed(int fd, int speed) throws android.os.RemoteException;
   public int getPrinterSpeed(int fd) throws android.os.RemoteException;
-  public void getPrinterPaperDistance(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterCutTimes(int fd, IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterPaperDistance(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterCutTimes(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setPageFormat(int fd, int format) throws android.os.RemoteException;
   public int getPrinterMode(int fd) throws android.os.RemoteException;
   public void setPrinterMode(int fd, int mode) throws android.os.RemoteException;
@@ -4312,17 +4492,17 @@ public interface INeoPrinterService extends android.os.IInterface
   public void openDrawer(int fd) throws android.os.RemoteException;
   public boolean getDrawerStatus(int fd) throws android.os.RemoteException;
   public int getOpenDrawerTimes(int fd) throws android.os.RemoteException;
-  public void printerSelfChecking(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void sendRAWData(int fd, byte[] bytes, IPrinterCallback callback) throws android.os.RemoteException;
+  public void printerSelfChecking(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void sendRAWData(int fd, byte[] bytes, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void enterPrinterBuffer(int fd, boolean clean) throws android.os.RemoteException;
   public void commitPrinterBuffer(int fd) throws android.os.RemoteException;
-  public void commitPrinterBufferWithCallback(int fd, IPrinterCallback callback) throws android.os.RemoteException;
+  public void commitPrinterBufferWithCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void exitPrinterBuffer(int fd, boolean commit) throws android.os.RemoteException;
-  public void exitPrinterBufferWithCallback(int fd, boolean commit, IPrinterCallback callback) throws android.os.RemoteException;
+  public void exitPrinterBufferWithCallback(int fd, boolean commit, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setDebugLogLevel(int fd, int level) throws android.os.RemoteException;
   public void setDebugLogSize(int fd, int size) throws android.os.RemoteException;
-  public void setDebugLogModule(int fd, String module, boolean isOpen) throws android.os.RemoteException;
-  public String getDebugLogState(int fd) throws android.os.RemoteException;
+  public void setDebugLogModule(int fd, java.lang.String module, boolean isOpen) throws android.os.RemoteException;
+  public java.lang.String getDebugLogState(int fd) throws android.os.RemoteException;
   public void printAndLineFeed(int fd) throws android.os.RemoteException;
   public void printAndFeedPaper(int fd, int value) throws android.os.RemoteException;
   public void printAndQuitPaper(int fd, int value) throws android.os.RemoteException;
@@ -4343,13 +4523,13 @@ public interface INeoPrinterService extends android.os.IInterface
   public void setFontChineseMode(int fd, int mode) throws android.os.RemoteException;
   public void setFontCountryCode(int fd, int country) throws android.os.RemoteException;
   public void setFontCodepage(int fd, int codepage) throws android.os.RemoteException;
-  public java.util.List<String> getFontCountryCode(int fd) throws android.os.RemoteException;
-  public java.util.List<String> getFontCodepage(int fd) throws android.os.RemoteException;
-  public void printText(int fd, String text, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printTextWithAli(int fd, String text, int anInt, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printTextWithEncode(int fd, String text, String code, IPrinterCallback callback) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getFontCountryCode(int fd) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getFontCodepage(int fd) throws android.os.RemoteException;
+  public void printText(int fd, java.lang.String text, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printTextWithAli(int fd, java.lang.String text, int anInt, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printTextWithEncode(int fd, java.lang.String text, java.lang.String code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setCodeAlignment(int fd, int alignmentMode) throws android.os.RemoteException;
-  public void setTextBitmapTypeface(int fd, String typeface) throws android.os.RemoteException;
+  public void setTextBitmapTypeface(int fd, java.lang.String typeface) throws android.os.RemoteException;
   public void setTextBitmapSize(int fd, int size) throws android.os.RemoteException;
   public void setTextBitmapStyle(int fd, int style) throws android.os.RemoteException;
   public void setTextBitmapStrikeThru(int fd, boolean strikeThru) throws android.os.RemoteException;
@@ -4357,26 +4537,26 @@ public interface INeoPrinterService extends android.os.IInterface
   public void setTextBitmapLineSpacing(int fd, float space) throws android.os.RemoteException;
   public void setTextBitmapLetterSpacing(int fd, float space) throws android.os.RemoteException;
   public void setTextBitmapAntiWhite(int fd, boolean antiWhite) throws android.os.RemoteException;
-  public void printTextBitmap(int fd, String text, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printTextBitmapWithAli(int fd, String text, int align, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printBitmap(int fd, android.graphics.Bitmap bitmap, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printBitmapWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printMultiBitmap(int fd, java.util.List<android.graphics.Bitmap> bitmaps, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printMultiBitmapWithAlign(int fd, java.util.List<android.graphics.Bitmap> bitmaps, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printColumnsText(int fd, String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printColumnsString(int fd, String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, IPrinterCallback callback) throws android.os.RemoteException;
+  public void printTextBitmap(int fd, java.lang.String text, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printTextBitmapWithAli(int fd, java.lang.String text, int align, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBitmap(int fd, android.graphics.Bitmap bitmap, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBitmapWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printMultiBitmap(int fd, java.util.List<android.graphics.Bitmap> bitmaps, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printMultiBitmapWithAlign(int fd, java.util.List<android.graphics.Bitmap> bitmaps, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printColumnsText(int fd, java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printColumnsString(int fd, java.lang.String[] colsTextArr, int[] colsWidthArr, int[] colsAlignArr, int[] colsSizeArr, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setBarCodeWidth(int fd, int width) throws android.os.RemoteException;
   public void setBarCodeHeight(int fd, int height) throws android.os.RemoteException;
   public void setBarCodeContentPrintPos(int fd, int pos) throws android.os.RemoteException;
-  public void printBarCodeWithFull(int fd, String data, int barCodeType, int width, int height, int textposition, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printBarCode(int fd, String data, int barCodeType, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printBarCodeWithAlign(int fd, String data, int barCodeType, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBarCodeWithFull(int fd, java.lang.String data, int barCodeType, int width, int height, int textposition, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBarCode(int fd, java.lang.String data, int barCodeType, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBarCodeWithAlign(int fd, java.lang.String data, int barCodeType, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setQrCodeSize(int fd, int size) throws android.os.RemoteException;
   public void setQrCodeErrorCorrectionLev(int fd, int level) throws android.os.RemoteException;
   public void setLeftMargin(int fd, int valve) throws android.os.RemoteException;
-  public void printQRCodeWithFull(int fd, String data, int size, int errorlevel, int alignments, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printQrCode(int fd, String data, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printQrCodeWithAlign(int fd, String data, int alignments, IPrinterCallback callback) throws android.os.RemoteException;
+  public void printQRCodeWithFull(int fd, java.lang.String data, int size, int errorlevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printQrCode(int fd, java.lang.String data, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printQrCodeWithAlign(int fd, java.lang.String data, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setDoubleQRSize(int fd, int size) throws android.os.RemoteException;
   public void setDoubleQR1MarginLeft(int fd, int qr1Left) throws android.os.RemoteException;
   public void setDoubleQR2MarginLeft(int fd, int qr2Left) throws android.os.RemoteException;
@@ -4384,23 +4564,28 @@ public interface INeoPrinterService extends android.os.IInterface
   public void setDoubleQR2Level(int fd, int qr2Level) throws android.os.RemoteException;
   public void setDoubleQR1Version(int fd, int qr1Version) throws android.os.RemoteException;
   public void setDoubleQR2Version(int fd, int qr2Version) throws android.os.RemoteException;
-  public void printDoubleQR(int fd, String qr1Data, String qr2Data, IPrinterCallback callback) throws android.os.RemoteException;
-  public String getPrinterUpdatePath(int fd) throws android.os.RemoteException;
-  public void setPrinterUpdatePath(int fd, String path) throws android.os.RemoteException;
+  public void printDoubleQR(int fd, java.lang.String qr1Data, java.lang.String qr2Data, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public java.lang.String getPrinterUpdatePath(int fd) throws android.os.RemoteException;
+  public void setPrinterUpdatePath(int fd, java.lang.String path) throws android.os.RemoteException;
   public void startPrinterUpdate(int fd) throws android.os.RemoteException;
-  public void getPrinterUpdateStatus(int fd, IPrinterUpdateCallback callback) throws android.os.RemoteException;
+  public void getPrinterUpdateStatus(int fd, com.imin.printer.IPrinterUpdateCallback callback) throws android.os.RemoteException;
   public void setIsUpdatePrinter(int fd, int update) throws android.os.RemoteException;
-  public void printBitmapColorChart(int fd, android.graphics.Bitmap bitmap, IPrinterCallback callback) throws android.os.RemoteException;
-  public void printBitmapColorChartWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterHardwareVersion(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public int getPrinterIsUpdateStatus(int fd, IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBitmapColorChart(int fd, android.graphics.Bitmap bitmap, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printBitmapColorChartWithAlign(int fd, android.graphics.Bitmap bitmap, int alignmentMode, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterHardwareVersion(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public int getPrinterIsUpdateStatus(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void updatePrinterInfo(int fd) throws android.os.RemoteException;
   public void setIsReconnectUsb(int fd, int isConnect) throws android.os.RemoteException;
   public int getIsReconnectUsb(int fd) throws android.os.RemoteException;
-  public void getConfigurationInfo(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterKnifeReset(int fd, IPrinterCallback callback) throws android.os.RemoteException;
-  public void getPrinterTemperature(int fd, IPrinterCallback callback) throws android.os.RemoteException;
+  public void getConfigurationInfo(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterKnifeReset(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterTemperature(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setConnectInternalPrinter(int fd, boolean connect) throws android.os.RemoteException;
   public boolean getConnectInternalPrinter(int fd) throws android.os.RemoteException;
   public void checkUpdateFirmware(int fd) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getPrinterDensityList(int fd) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getPrinterSpeedList(int fd) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getPrinterPaperTypeList(int fd) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getPrinterPatternList(int fd) throws android.os.RemoteException;
+  public boolean supportCashBox(int fd) throws android.os.RemoteException;
 }

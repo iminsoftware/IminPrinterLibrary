@@ -5,7 +5,7 @@ package com.imin.printer;
 public interface IPrinterCallback extends android.os.IInterface
 {
   /** Default implementation for IPrinterCallback. */
-  public static class Default implements IPrinterCallback
+  public static class Default implements com.imin.printer.IPrinterCallback
   {
     /**
        	* 返回接口执行的结果
@@ -19,7 +19,7 @@ public interface IPrinterCallback extends android.os.IInterface
        	* 返回接口执行的结果(字符串数据)
        	* @param result:	结果，打印机上电以来打印长度等(单位mm)
        	*/
-    @Override public void onReturnString(String result) throws android.os.RemoteException
+    @Override public void onReturnString(java.lang.String result) throws android.os.RemoteException
     {
     }
     /**
@@ -27,7 +27,7 @@ public interface IPrinterCallback extends android.os.IInterface
        	* code：	异常代码
        	* msg:	异常描述
        	*/
-    @Override public void onRaiseException(int code, String msg) throws android.os.RemoteException
+    @Override public void onRaiseException(int code, java.lang.String msg) throws android.os.RemoteException
     {
     }
     /**
@@ -35,7 +35,7 @@ public interface IPrinterCallback extends android.os.IInterface
        	* code：	异常代码 0 成功 1 失败
        	* msg:	异常描述
        	*/
-    @Override public void onPrintResult(int code, String msg) throws android.os.RemoteException
+    @Override public void onPrintResult(int code, java.lang.String msg) throws android.os.RemoteException
     {
     }
     @Override
@@ -44,9 +44,9 @@ public interface IPrinterCallback extends android.os.IInterface
     }
   }
   /** Local-side IPC implementation stub class. */
-  public static abstract class Stub extends android.os.Binder implements IPrinterCallback
+  public static abstract class Stub extends android.os.Binder implements com.imin.printer.IPrinterCallback
   {
-    private static final String DESCRIPTOR = "com.imin.printer.IPrinterCallback";
+    private static final java.lang.String DESCRIPTOR = "com.imin.printer.IPrinterCallback";
     /** Construct the stub at attach it to the interface. */
     public Stub()
     {
@@ -56,16 +56,16 @@ public interface IPrinterCallback extends android.os.IInterface
      * Cast an IBinder object into an com.imin.printer.IPrinterCallback interface,
      * generating a proxy if needed.
      */
-    public static IPrinterCallback asInterface(android.os.IBinder obj)
+    public static com.imin.printer.IPrinterCallback asInterface(android.os.IBinder obj)
     {
       if ((obj==null)) {
         return null;
       }
       android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-      if (((iin!=null)&&(iin instanceof IPrinterCallback))) {
-        return ((IPrinterCallback)iin);
+      if (((iin!=null)&&(iin instanceof com.imin.printer.IPrinterCallback))) {
+        return ((com.imin.printer.IPrinterCallback)iin);
       }
-      return new Proxy(obj);
+      return new com.imin.printer.IPrinterCallback.Stub.Proxy(obj);
     }
     @Override public android.os.IBinder asBinder()
     {
@@ -73,7 +73,7 @@ public interface IPrinterCallback extends android.os.IInterface
     }
     @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
     {
-      String descriptor = DESCRIPTOR;
+      java.lang.String descriptor = DESCRIPTOR;
       switch (code)
       {
         case INTERFACE_TRANSACTION:
@@ -92,7 +92,7 @@ public interface IPrinterCallback extends android.os.IInterface
         case TRANSACTION_onReturnString:
         {
           data.enforceInterface(descriptor);
-          String _arg0;
+          java.lang.String _arg0;
           _arg0 = data.readString();
           this.onReturnString(_arg0);
           return true;
@@ -102,7 +102,7 @@ public interface IPrinterCallback extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           this.onRaiseException(_arg0, _arg1);
           return true;
@@ -112,7 +112,7 @@ public interface IPrinterCallback extends android.os.IInterface
           data.enforceInterface(descriptor);
           int _arg0;
           _arg0 = data.readInt();
-          String _arg1;
+          java.lang.String _arg1;
           _arg1 = data.readString();
           this.onPrintResult(_arg0, _arg1);
           return true;
@@ -123,7 +123,7 @@ public interface IPrinterCallback extends android.os.IInterface
         }
       }
     }
-    private static class Proxy implements IPrinterCallback
+    private static class Proxy implements com.imin.printer.IPrinterCallback
     {
       private android.os.IBinder mRemote;
       Proxy(android.os.IBinder remote)
@@ -134,7 +134,7 @@ public interface IPrinterCallback extends android.os.IInterface
       {
         return mRemote;
       }
-      public String getInterfaceDescriptor()
+      public java.lang.String getInterfaceDescriptor()
       {
         return DESCRIPTOR;
       }
@@ -163,7 +163,7 @@ public interface IPrinterCallback extends android.os.IInterface
          	* 返回接口执行的结果(字符串数据)
          	* @param result:	结果，打印机上电以来打印长度等(单位mm)
          	*/
-      @Override public void onReturnString(String result) throws android.os.RemoteException
+      @Override public void onReturnString(java.lang.String result) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         try {
@@ -184,7 +184,7 @@ public interface IPrinterCallback extends android.os.IInterface
          	* code：	异常代码
          	* msg:	异常描述
          	*/
-      @Override public void onRaiseException(int code, String msg) throws android.os.RemoteException
+      @Override public void onRaiseException(int code, java.lang.String msg) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         try {
@@ -206,7 +206,7 @@ public interface IPrinterCallback extends android.os.IInterface
          	* code：	异常代码 0 成功 1 失败
          	* msg:	异常描述
          	*/
-      @Override public void onPrintResult(int code, String msg) throws android.os.RemoteException
+      @Override public void onPrintResult(int code, java.lang.String msg) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         try {
@@ -223,27 +223,27 @@ public interface IPrinterCallback extends android.os.IInterface
           _data.recycle();
         }
       }
-      public static IPrinterCallback sDefaultImpl;
+      public static com.imin.printer.IPrinterCallback sDefaultImpl;
     }
     static final int TRANSACTION_onRunResult = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
     static final int TRANSACTION_onReturnString = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
     static final int TRANSACTION_onRaiseException = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
     static final int TRANSACTION_onPrintResult = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
-    public static boolean setDefaultImpl(IPrinterCallback impl) {
+    public static boolean setDefaultImpl(com.imin.printer.IPrinterCallback impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
       // users in the same process use this function.
-      if (Proxy.sDefaultImpl != null) {
+      if (Stub.Proxy.sDefaultImpl != null) {
         throw new IllegalStateException("setDefaultImpl() called twice");
       }
       if (impl != null) {
-        Proxy.sDefaultImpl = impl;
+        Stub.Proxy.sDefaultImpl = impl;
         return true;
       }
       return false;
     }
-    public static IPrinterCallback getDefaultImpl() {
-      return Proxy.sDefaultImpl;
+    public static com.imin.printer.IPrinterCallback getDefaultImpl() {
+      return Stub.Proxy.sDefaultImpl;
     }
   }
   /**
@@ -256,17 +256,17 @@ public interface IPrinterCallback extends android.os.IInterface
      	* 返回接口执行的结果(字符串数据)
      	* @param result:	结果，打印机上电以来打印长度等(单位mm)
      	*/
-  public void onReturnString(String result) throws android.os.RemoteException;
+  public void onReturnString(java.lang.String result) throws android.os.RemoteException;
   /**
      	* 返回接口执行失败时发生异常情况的具体原因
      	* code：	异常代码
      	* msg:	异常描述
      	*/
-  public void onRaiseException(int code, String msg) throws android.os.RemoteException;
+  public void onRaiseException(int code, java.lang.String msg) throws android.os.RemoteException;
   /**
      	* 返回打印机结果
      	* code：	异常代码 0 成功 1 失败
      	* msg:	异常描述
      	*/
-  public void onPrintResult(int code, String msg) throws android.os.RemoteException;
+  public void onPrintResult(int code, java.lang.String msg) throws android.os.RemoteException;
 }

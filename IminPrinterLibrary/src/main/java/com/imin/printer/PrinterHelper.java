@@ -575,6 +575,62 @@ public class PrinterHelper {
         return list;
     }
 
+    public List<String> getPrinterDensityList(){
+        List<String> list = new ArrayList<>();
+        if (iNeoPrinterService == null)return list;
+        try {
+            list = iNeoPrinterService.getPrinterDensityList(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<String> getPrinterSpeedList(){
+        List<String> list = new ArrayList<>();
+        if (iNeoPrinterService == null)return list;
+        try {
+            list = iNeoPrinterService.getPrinterSpeedList(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<String> getPrinterPaperTypeList(){
+        List<String> list = new ArrayList<>();
+        if (iNeoPrinterService == null)return list;
+        try {
+            list = iNeoPrinterService.getPrinterPaperTypeList(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<String> getPrinterPatternList(){
+        List<String> list = new ArrayList<>();
+        if (iNeoPrinterService == null)return list;
+        try {
+            list = iNeoPrinterService.getPrinterPatternList(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public boolean supportCashBox(){
+
+        boolean status = false;
+        if (iNeoPrinterService == null)return false;
+        try {
+            status = iNeoPrinterService.supportCashBox(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+
     public void printText(String text,INeoPrinterCallback callback){
         if (iNeoPrinterService == null)return;
         try {
