@@ -22,8 +22,8 @@ public class NeoPrinterManager {
         if (mContext != null && callback != null) {
             Log.d(TAG,mContext.getPackageName() + " bindService!");
             Intent intent = new Intent();
-            intent.setAction("com.neo.printer.sdk.NeoPrinterService");
-            intent.setComponent(new ComponentName("com.neo.printer.sdk", "com.neo.printer.sdk.core.ApiAdapterManager.NeoPrinterService"));
+            intent.setAction("com.imin.printerservice.NeoPrinterService");
+            intent.setComponent(new ComponentName("com.imin.printerservice", "com.imin.printerservice.core.ApiAdapterManager.NeoPrinterService"));
             return mContext.getApplicationContext().bindService(intent, callback, Context.BIND_AUTO_CREATE);
         }else {
             Log.e(TAG,"bindService parameter must be not null!");
