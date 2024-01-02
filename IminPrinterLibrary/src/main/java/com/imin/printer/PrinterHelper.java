@@ -1120,4 +1120,93 @@ public class PrinterHelper {
             e.printStackTrace();
         }
     }
+
+    public void setPrinterEncode(int encode) {
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.setPrinterEncode(fd, encode);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void partialCutAndFeedPaper(int length){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.partialCutAndFeedPaper(fd, length);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void fullCutAndFeedPaper(int length){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.fullCutAndFeedPaper(fd, length);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getPrinterSupplierName(){
+        String supplierName = "";
+        if (iNeoPrinterService == null)return supplierName;
+        try {
+            supplierName = iNeoPrinterService.getPrinterSupplierName(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return supplierName;
+    }
+
+    public List<String> getEncodeList(){
+        List<String> list = new ArrayList<>();
+        if (iNeoPrinterService == null)return list;
+        try {
+            list = iNeoPrinterService.getEncodeList(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public String getCurCodepage(){
+        String codepage = "";
+        if (iNeoPrinterService == null)return codepage;
+        try {
+            codepage = iNeoPrinterService.getCurCodepage(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return codepage;
+    }
+
+    public String getCurEncode(){
+        String encode = "";
+        if (iNeoPrinterService == null)return encode;
+        try {
+            encode = iNeoPrinterService.getCurEncode(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return encode;
+    }
+
+    public void getPrinterParameter(int code, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.getPrinterParameter(fd,code,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void regesiterPrinterStatusCallback(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.regesiterPrinterStatusCallback(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 }

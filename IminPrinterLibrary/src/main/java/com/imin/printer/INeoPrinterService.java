@@ -387,6 +387,37 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return false;
     }
+    @Override public void setPrinterEncode(int fd, int encode) throws android.os.RemoteException
+    {
+    }
+    @Override public void partialCutAndFeedPaper(int fd, int length) throws android.os.RemoteException
+    {
+    }
+    @Override public void fullCutAndFeedPaper(int fd, int length) throws android.os.RemoteException
+    {
+    }
+    @Override public java.lang.String getPrinterSupplierName(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.util.List<java.lang.String> getEncodeList(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.lang.String getCurCodepage(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.lang.String getCurEncode(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public void getPrinterParameter(int fd, int code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void regesiterPrinterStatusCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -1832,6 +1863,103 @@ public interface INeoPrinterService extends android.os.IInterface
           boolean _result = this.supportCashBox(_arg0);
           reply.writeNoException();
           reply.writeInt(((_result)?(1):(0)));
+          return true;
+        }
+        case TRANSACTION_setPrinterEncode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.setPrinterEncode(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_partialCutAndFeedPaper:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.partialCutAndFeedPaper(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_fullCutAndFeedPaper:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.fullCutAndFeedPaper(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_getPrinterSupplierName:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _result = this.getPrinterSupplierName(_arg0);
+          reply.writeNoException();
+          reply.writeString(_result);
+          return true;
+        }
+        case TRANSACTION_getEncodeList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.util.List<java.lang.String> _result = this.getEncodeList(_arg0);
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_getCurCodepage:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _result = this.getCurCodepage(_arg0);
+          reply.writeNoException();
+          reply.writeString(_result);
+          return true;
+        }
+        case TRANSACTION_getCurEncode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _result = this.getCurEncode(_arg0);
+          reply.writeNoException();
+          reply.writeString(_result);
+          return true;
+        }
+        case TRANSACTION_getPrinterParameter:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.getPrinterParameter(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_regesiterPrinterStatusCallback:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.regesiterPrinterStatusCallback(_arg0, _arg1);
+          reply.writeNoException();
           return true;
         }
         default:
@@ -4331,6 +4459,191 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
+      @Override public void setPrinterEncode(int fd, int encode) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(encode);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_setPrinterEncode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().setPrinterEncode(fd, encode);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void partialCutAndFeedPaper(int fd, int length) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(length);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_partialCutAndFeedPaper, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().partialCutAndFeedPaper(fd, length);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void fullCutAndFeedPaper(int fd, int length) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(length);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_fullCutAndFeedPaper, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().fullCutAndFeedPaper(fd, length);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public java.lang.String getPrinterSupplierName(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.lang.String _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterSupplierName, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterSupplierName(fd);
+          }
+          _reply.readException();
+          _result = _reply.readString();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.util.List<java.lang.String> getEncodeList(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getEncodeList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getEncodeList(fd);
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.lang.String getCurCodepage(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.lang.String _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getCurCodepage, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getCurCodepage(fd);
+          }
+          _reply.readException();
+          _result = _reply.readString();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.lang.String getCurEncode(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.lang.String _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getCurEncode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getCurEncode(fd);
+          }
+          _reply.readException();
+          _result = _reply.readString();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public void getPrinterParameter(int fd, int code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(code);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterParameter, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().getPrinterParameter(fd, code, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void regesiterPrinterStatusCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_regesiterPrinterStatusCallback, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().regesiterPrinterStatusCallback(fd, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
       public static com.imin.printer.INeoPrinterService sDefaultImpl;
     }
     static final int TRANSACTION_initPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
@@ -4452,6 +4765,15 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_getPrinterPaperTypeList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 116);
     static final int TRANSACTION_getPrinterPatternList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 117);
     static final int TRANSACTION_supportCashBox = (android.os.IBinder.FIRST_CALL_TRANSACTION + 118);
+    static final int TRANSACTION_setPrinterEncode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 119);
+    static final int TRANSACTION_partialCutAndFeedPaper = (android.os.IBinder.FIRST_CALL_TRANSACTION + 120);
+    static final int TRANSACTION_fullCutAndFeedPaper = (android.os.IBinder.FIRST_CALL_TRANSACTION + 121);
+    static final int TRANSACTION_getPrinterSupplierName = (android.os.IBinder.FIRST_CALL_TRANSACTION + 122);
+    static final int TRANSACTION_getEncodeList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 123);
+    static final int TRANSACTION_getCurCodepage = (android.os.IBinder.FIRST_CALL_TRANSACTION + 124);
+    static final int TRANSACTION_getCurEncode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 125);
+    static final int TRANSACTION_getPrinterParameter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 126);
+    static final int TRANSACTION_regesiterPrinterStatusCallback = (android.os.IBinder.FIRST_CALL_TRANSACTION + 127);
     public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -4588,4 +4910,13 @@ public interface INeoPrinterService extends android.os.IInterface
   public java.util.List<java.lang.String> getPrinterPaperTypeList(int fd) throws android.os.RemoteException;
   public java.util.List<java.lang.String> getPrinterPatternList(int fd) throws android.os.RemoteException;
   public boolean supportCashBox(int fd) throws android.os.RemoteException;
+  public void setPrinterEncode(int fd, int encode) throws android.os.RemoteException;
+  public void partialCutAndFeedPaper(int fd, int length) throws android.os.RemoteException;
+  public void fullCutAndFeedPaper(int fd, int length) throws android.os.RemoteException;
+  public java.lang.String getPrinterSupplierName(int fd) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getEncodeList(int fd) throws android.os.RemoteException;
+  public java.lang.String getCurCodepage(int fd) throws android.os.RemoteException;
+  public java.lang.String getCurEncode(int fd) throws android.os.RemoteException;
+  public void getPrinterParameter(int fd, int code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void regesiterPrinterStatusCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
 }

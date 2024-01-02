@@ -39,7 +39,7 @@ dependencies {
  * 接口版本号
  */
 ext{
-    versionCode = 'V1.0.0.9'
+    versionCode = 'V1.0.0.10'
 }
 
 /**
@@ -65,7 +65,7 @@ def getBuildName(boolean isRelease) {
 
 
 task makeJar(type: Copy) {
-    boolean isRelease = false
+    boolean isRelease = true
     //删除存在的
     delete 'build/libs/'+getBuildName(isRelease)
     //设置拷贝的文件
@@ -95,7 +95,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.imin.printer'
                 artifactId = 'library'
-                version = 'V1.0.0.9'
+                version = 'V1.0.0.10'
             }
         }
     }
