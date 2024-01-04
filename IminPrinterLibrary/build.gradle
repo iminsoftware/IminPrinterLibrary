@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
-        minSdk 28
-        targetSdk 32
+        minSdk 21
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -23,6 +23,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions{
+        disable'LongLogTag'
     }
 }
 
@@ -39,7 +43,7 @@ dependencies {
  * 接口版本号
  */
 ext{
-    versionCode = 'V1.0.0.10'
+    versionCode = 'V1.0.0.11'
 }
 
 /**
@@ -95,7 +99,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.imin.printer'
                 artifactId = 'library'
-                version = 'V1.0.0.10'
+                version = 'V1.0.0.11'
             }
         }
     }
