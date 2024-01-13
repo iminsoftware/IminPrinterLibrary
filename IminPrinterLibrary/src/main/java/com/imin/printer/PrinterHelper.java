@@ -1209,4 +1209,13 @@ public class PrinterHelper {
             e.printStackTrace();
         }
     }
+
+    public void print2DCode(String data, int symbology, int modulesize, int errorlevel, int alignments, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.print2DCode(fd,data,symbology,modulesize,errorlevel,alignments,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 }
