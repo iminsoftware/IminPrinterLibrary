@@ -13,6 +13,7 @@ public class PrinterHelper {
 
     private static PrinterHelper helper = new PrinterHelper();
     private static INeoPrinterService iNeoPrinterService;
+    private static InitPrinterCallback mInitPrinterCallback;
     private PrinterHelper() {}
 
     public static PrinterHelper getInstance() {
@@ -34,6 +35,17 @@ public class PrinterHelper {
     }
 
     /**
+     * init  print service add initPrinterCallback
+     */
+    public boolean initPrinterService(Context context, InitPrinterCallback initPrinterCallback){
+        mContext = context;
+        mInitPrinterCallback = initPrinterCallback;
+        boolean result = NeoPrinterManager.getInstance().bindService(context,serviceConnectionCallback);
+        Log.d(TAG,result ? "绑定服务成功" : "绑定服务失败");
+        return result;
+    }
+
+    /**
      *  deInit print service
      */
     public void deInitPrinterService(Context context){
@@ -46,11 +58,17 @@ public class PrinterHelper {
             iNeoPrinterService = service;
             Log.d(TAG,"绑定AIDL服务成功");
             initPrinter(mContext.getApplicationContext().getPackageName(), null);
+            if(mInitPrinterCallback != null){
+                mInitPrinterCallback.onConnected();
+            }
         }
 
         @Override
         protected void onDisconnected() {
             iNeoPrinterService = null;
+            if(mInitPrinterCallback != null){
+                mInitPrinterCallback.onDisconnected();
+            }
             Log.d(TAG,"AIDL服务已断开");
         }
     };
@@ -1214,6 +1232,42 @@ public class PrinterHelper {
         if (iNeoPrinterService == null)return;
         try {
             iNeoPrinterService.print2DCode(fd,data,symbology,modulesize,errorlevel,alignments,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printPDF417(String data, int dataRegionColumns, int rows, int moduleWidth, int rowHeight, int errorLevel, int selectOptions, int alignments, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.printPDF417(fd,data,dataRegionColumns,rows,moduleWidth,rowHeight,errorLevel,selectOptions,alignments,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printMaxiCode(String data, int modeType, int alignments, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.printMaxiCode(fd,data,modeType,alignments,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printAztecCode(String data, int modeType, int dataLayers, int moduleSize, int errorLevel, int alignments, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.printAztecCode(fd,data,modeType,dataLayers,moduleSize,errorLevel,alignments,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printDataMatrix(String data, int symbolType, int columns, int rows, int moduleSize, int alignments, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.printDataMatrix(fd,data,symbolType,columns,rows,moduleSize,alignments,callback);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

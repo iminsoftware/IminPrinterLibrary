@@ -418,7 +418,19 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void regesiterPrinterStatusCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
-    @Override public void print2DCode(int fd, java.lang.String data, int symbology, int modulesize, int errorlevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    @Override public void print2DCode(int fd, java.lang.String data, int symbology, int moduleSize, int errorLevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void printPDF417(int fd, java.lang.String data, int dataRegionColumns, int rows, int moduleWidth, int rowHeight, int errorLevel, int selectOptions, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void printMaxiCode(int fd, java.lang.String data, int modeType, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void printAztecCode(int fd, java.lang.String data, int modeType, int dataLayers, int moduleSize, int errorLevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void printDataMatrix(int fd, java.lang.String data, int symbolType, int columns, int rows, int moduleSize, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
     @Override
@@ -1983,6 +1995,96 @@ public interface INeoPrinterService extends android.os.IInterface
           com.imin.printer.IPrinterCallback _arg6;
           _arg6 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.print2DCode(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_printPDF417:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          int _arg4;
+          _arg4 = data.readInt();
+          int _arg5;
+          _arg5 = data.readInt();
+          int _arg6;
+          _arg6 = data.readInt();
+          int _arg7;
+          _arg7 = data.readInt();
+          int _arg8;
+          _arg8 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg9;
+          _arg9 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.printPDF417(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, _arg9);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_printMaxiCode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg4;
+          _arg4 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.printMaxiCode(_arg0, _arg1, _arg2, _arg3, _arg4);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_printAztecCode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          int _arg4;
+          _arg4 = data.readInt();
+          int _arg5;
+          _arg5 = data.readInt();
+          int _arg6;
+          _arg6 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg7;
+          _arg7 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.printAztecCode(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_printDataMatrix:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          int _arg4;
+          _arg4 = data.readInt();
+          int _arg5;
+          _arg5 = data.readInt();
+          int _arg6;
+          _arg6 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg7;
+          _arg7 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.printDataMatrix(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7);
           reply.writeNoException();
           return true;
         }
@@ -4668,7 +4770,7 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
-      @Override public void print2DCode(int fd, java.lang.String data, int symbology, int modulesize, int errorlevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      @Override public void print2DCode(int fd, java.lang.String data, int symbology, int moduleSize, int errorLevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -4677,13 +4779,116 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.writeInt(fd);
           _data.writeString(data);
           _data.writeInt(symbology);
-          _data.writeInt(modulesize);
-          _data.writeInt(errorlevel);
+          _data.writeInt(moduleSize);
+          _data.writeInt(errorLevel);
           _data.writeInt(alignments);
           _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
           boolean _status = mRemote.transact(Stub.TRANSACTION_print2DCode, _data, _reply, 0);
           if (!_status && getDefaultImpl() != null) {
-            getDefaultImpl().print2DCode(fd, data, symbology, modulesize, errorlevel, alignments, callback);
+            getDefaultImpl().print2DCode(fd, data, symbology, moduleSize, errorLevel, alignments, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void printPDF417(int fd, java.lang.String data, int dataRegionColumns, int rows, int moduleWidth, int rowHeight, int errorLevel, int selectOptions, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(data);
+          _data.writeInt(dataRegionColumns);
+          _data.writeInt(rows);
+          _data.writeInt(moduleWidth);
+          _data.writeInt(rowHeight);
+          _data.writeInt(errorLevel);
+          _data.writeInt(selectOptions);
+          _data.writeInt(alignments);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_printPDF417, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().printPDF417(fd, data, dataRegionColumns, rows, moduleWidth, rowHeight, errorLevel, selectOptions, alignments, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void printMaxiCode(int fd, java.lang.String data, int modeType, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(data);
+          _data.writeInt(modeType);
+          _data.writeInt(alignments);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_printMaxiCode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().printMaxiCode(fd, data, modeType, alignments, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void printAztecCode(int fd, java.lang.String data, int modeType, int dataLayers, int moduleSize, int errorLevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(data);
+          _data.writeInt(modeType);
+          _data.writeInt(dataLayers);
+          _data.writeInt(moduleSize);
+          _data.writeInt(errorLevel);
+          _data.writeInt(alignments);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_printAztecCode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().printAztecCode(fd, data, modeType, dataLayers, moduleSize, errorLevel, alignments, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void printDataMatrix(int fd, java.lang.String data, int symbolType, int columns, int rows, int moduleSize, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(data);
+          _data.writeInt(symbolType);
+          _data.writeInt(columns);
+          _data.writeInt(rows);
+          _data.writeInt(moduleSize);
+          _data.writeInt(alignments);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_printDataMatrix, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().printDataMatrix(fd, data, symbolType, columns, rows, moduleSize, alignments, callback);
             return;
           }
           _reply.readException();
@@ -4824,6 +5029,10 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_getPrinterParameter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 126);
     static final int TRANSACTION_regesiterPrinterStatusCallback = (android.os.IBinder.FIRST_CALL_TRANSACTION + 127);
     static final int TRANSACTION_print2DCode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 128);
+    static final int TRANSACTION_printPDF417 = (android.os.IBinder.FIRST_CALL_TRANSACTION + 129);
+    static final int TRANSACTION_printMaxiCode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 130);
+    static final int TRANSACTION_printAztecCode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 131);
+    static final int TRANSACTION_printDataMatrix = (android.os.IBinder.FIRST_CALL_TRANSACTION + 132);
     public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -4969,5 +5178,9 @@ public interface INeoPrinterService extends android.os.IInterface
   public java.lang.String getCurEncode(int fd) throws android.os.RemoteException;
   public void getPrinterParameter(int fd, int code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void regesiterPrinterStatusCallback(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
-  public void print2DCode(int fd, java.lang.String data, int symbology, int modulesize, int errorlevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void print2DCode(int fd, java.lang.String data, int symbology, int moduleSize, int errorLevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printPDF417(int fd, java.lang.String data, int dataRegionColumns, int rows, int moduleWidth, int rowHeight, int errorLevel, int selectOptions, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printMaxiCode(int fd, java.lang.String data, int modeType, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printAztecCode(int fd, java.lang.String data, int modeType, int dataLayers, int moduleSize, int errorLevel, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void printDataMatrix(int fd, java.lang.String data, int symbolType, int columns, int rows, int moduleSize, int alignments, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
 }
