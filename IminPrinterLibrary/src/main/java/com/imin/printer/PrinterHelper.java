@@ -1272,4 +1272,31 @@ public class PrinterHelper {
             e.printStackTrace();
         }
     }
+
+    public void getThresholdMS2(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.getThresholdMS2(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setThresholdMS2(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.setThresholdMS2(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void resetThresholdMS2(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.resetThresholdMS2(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 }
