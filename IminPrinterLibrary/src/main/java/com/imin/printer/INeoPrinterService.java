@@ -442,6 +442,71 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void resetThresholdMS2(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
+    @Override public void labelInitCanvas(int fd, com.imin.printer.label.LabelCanvasStyle labelCanvasStyle) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelAddText(int fd, java.lang.String text, com.imin.printer.label.LabelTextStyle labelTextStyle) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelAddBarcode(int fd, java.lang.String codeData, com.imin.printer.label.LabelBarCodeStyle labelBarCodeStyle) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelAddQrCode(int fd, java.lang.String qrData, com.imin.printer.label.LabelQrCodeStyle labelQrCodeStyle) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelAddBitmap(int fd, android.graphics.Bitmap bitmap, com.imin.printer.label.LabelBitmapStyle labelBitmapStyle) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelAddArea(int fd, com.imin.printer.label.LabelAreaStyle labelAreaStyle) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelPrintCanvas(int fd, int count, com.imin.printer.ILabelPrintResult printResult) throws android.os.RemoteException
+    {
+    }
+    @Override public android.graphics.Bitmap getLabelBitmap(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public void labelPaperLearning(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelGapSensorCalibration(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelTakePaperSensorLearning(int fd, int value, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelSetTakePaperSensorThreshold(int fd, int value) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelElectricToHotLineDistance(int fd, int value) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelRetractDistanceOffset(int fd, int value) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelSetGapMechanicalError(int fd, int value1, int value2, int value3, int value4) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelSetPrinterMode(int fd, int mode) throws android.os.RemoteException
+    {
+    }
+    @Override public java.lang.String labelQueryInfo(int fd, java.lang.String code) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public void labelQueryInfoCallback(int fd, java.lang.String code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelRestoreDefaults(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelPrintBitmap(int fd, android.graphics.Bitmap bitmap, int width, int height, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void labelGetPrinterMode(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -2127,6 +2192,309 @@ public interface INeoPrinterService extends android.os.IInterface
           com.imin.printer.IPrinterCallback _arg1;
           _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.resetThresholdMS2(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelInitCanvas:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.label.LabelCanvasStyle _arg1;
+          if ((0!=data.readInt())) {
+            _arg1 = com.imin.printer.label.LabelCanvasStyle.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg1 = null;
+          }
+          this.labelInitCanvas(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelAddText:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          com.imin.printer.label.LabelTextStyle _arg2;
+          if ((0!=data.readInt())) {
+            _arg2 = com.imin.printer.label.LabelTextStyle.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg2 = null;
+          }
+          this.labelAddText(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelAddBarcode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          com.imin.printer.label.LabelBarCodeStyle _arg2;
+          if ((0!=data.readInt())) {
+            _arg2 = com.imin.printer.label.LabelBarCodeStyle.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg2 = null;
+          }
+          this.labelAddBarcode(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelAddQrCode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          com.imin.printer.label.LabelQrCodeStyle _arg2;
+          if ((0!=data.readInt())) {
+            _arg2 = com.imin.printer.label.LabelQrCodeStyle.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg2 = null;
+          }
+          this.labelAddQrCode(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelAddBitmap:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          android.graphics.Bitmap _arg1;
+          if ((0!=data.readInt())) {
+            _arg1 = android.graphics.Bitmap.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg1 = null;
+          }
+          com.imin.printer.label.LabelBitmapStyle _arg2;
+          if ((0!=data.readInt())) {
+            _arg2 = com.imin.printer.label.LabelBitmapStyle.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg2 = null;
+          }
+          this.labelAddBitmap(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelAddArea:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.label.LabelAreaStyle _arg1;
+          if ((0!=data.readInt())) {
+            _arg1 = com.imin.printer.label.LabelAreaStyle.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg1 = null;
+          }
+          this.labelAddArea(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelPrintCanvas:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          com.imin.printer.ILabelPrintResult _arg2;
+          _arg2 = com.imin.printer.ILabelPrintResult.Stub.asInterface(data.readStrongBinder());
+          this.labelPrintCanvas(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_getLabelBitmap:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          android.graphics.Bitmap _result = this.getLabelBitmap(_arg0);
+          reply.writeNoException();
+          if ((_result!=null)) {
+            reply.writeInt(1);
+            _result.writeToParcel(reply, android.os.Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+          }
+          else {
+            reply.writeInt(0);
+          }
+          return true;
+        }
+        case TRANSACTION_labelPaperLearning:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelPaperLearning(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelGapSensorCalibration:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelGapSensorCalibration(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelTakePaperSensorLearning:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelTakePaperSensorLearning(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelSetTakePaperSensorThreshold:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.labelSetTakePaperSensorThreshold(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelElectricToHotLineDistance:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.labelElectricToHotLineDistance(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelRetractDistanceOffset:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.labelRetractDistanceOffset(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelSetGapMechanicalError:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          int _arg4;
+          _arg4 = data.readInt();
+          this.labelSetGapMechanicalError(_arg0, _arg1, _arg2, _arg3, _arg4);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelSetPrinterMode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          this.labelSetPrinterMode(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelQueryInfo:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          java.lang.String _result = this.labelQueryInfo(_arg0, _arg1);
+          reply.writeNoException();
+          reply.writeString(_result);
+          return true;
+        }
+        case TRANSACTION_labelQueryInfoCallback:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelQueryInfoCallback(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelRestoreDefaults:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelRestoreDefaults(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelPrintBitmap:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          android.graphics.Bitmap _arg1;
+          if ((0!=data.readInt())) {
+            _arg1 = android.graphics.Bitmap.CREATOR.createFromParcel(data);
+          }
+          else {
+            _arg1 = null;
+          }
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg4;
+          _arg4 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelPrintBitmap(_arg0, _arg1, _arg2, _arg3, _arg4);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelGetPrinterMode:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.labelGetPrinterMode(_arg0, _arg1);
           reply.writeNoException();
           return true;
         }
@@ -5000,6 +5368,495 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
+      @Override public void labelInitCanvas(int fd, com.imin.printer.label.LabelCanvasStyle labelCanvasStyle) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          if ((labelCanvasStyle!=null)) {
+            _data.writeInt(1);
+            labelCanvasStyle.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelInitCanvas, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelInitCanvas(fd, labelCanvasStyle);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelAddText(int fd, java.lang.String text, com.imin.printer.label.LabelTextStyle labelTextStyle) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(text);
+          if ((labelTextStyle!=null)) {
+            _data.writeInt(1);
+            labelTextStyle.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelAddText, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelAddText(fd, text, labelTextStyle);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelAddBarcode(int fd, java.lang.String codeData, com.imin.printer.label.LabelBarCodeStyle labelBarCodeStyle) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(codeData);
+          if ((labelBarCodeStyle!=null)) {
+            _data.writeInt(1);
+            labelBarCodeStyle.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelAddBarcode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelAddBarcode(fd, codeData, labelBarCodeStyle);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelAddQrCode(int fd, java.lang.String qrData, com.imin.printer.label.LabelQrCodeStyle labelQrCodeStyle) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(qrData);
+          if ((labelQrCodeStyle!=null)) {
+            _data.writeInt(1);
+            labelQrCodeStyle.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelAddQrCode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelAddQrCode(fd, qrData, labelQrCodeStyle);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelAddBitmap(int fd, android.graphics.Bitmap bitmap, com.imin.printer.label.LabelBitmapStyle labelBitmapStyle) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          if ((bitmap!=null)) {
+            _data.writeInt(1);
+            bitmap.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          if ((labelBitmapStyle!=null)) {
+            _data.writeInt(1);
+            labelBitmapStyle.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelAddBitmap, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelAddBitmap(fd, bitmap, labelBitmapStyle);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelAddArea(int fd, com.imin.printer.label.LabelAreaStyle labelAreaStyle) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          if ((labelAreaStyle!=null)) {
+            _data.writeInt(1);
+            labelAreaStyle.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelAddArea, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelAddArea(fd, labelAreaStyle);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelPrintCanvas(int fd, int count, com.imin.printer.ILabelPrintResult printResult) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(count);
+          _data.writeStrongBinder((((printResult!=null))?(printResult.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelPrintCanvas, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelPrintCanvas(fd, count, printResult);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public android.graphics.Bitmap getLabelBitmap(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        android.graphics.Bitmap _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getLabelBitmap, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getLabelBitmap(fd);
+          }
+          _reply.readException();
+          if ((0!=_reply.readInt())) {
+            _result = android.graphics.Bitmap.CREATOR.createFromParcel(_reply);
+          }
+          else {
+            _result = null;
+          }
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public void labelPaperLearning(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelPaperLearning, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelPaperLearning(fd, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelGapSensorCalibration(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelGapSensorCalibration, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelGapSensorCalibration(fd, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelTakePaperSensorLearning(int fd, int value, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(value);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelTakePaperSensorLearning, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelTakePaperSensorLearning(fd, value, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelSetTakePaperSensorThreshold(int fd, int value) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(value);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelSetTakePaperSensorThreshold, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelSetTakePaperSensorThreshold(fd, value);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelElectricToHotLineDistance(int fd, int value) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(value);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelElectricToHotLineDistance, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelElectricToHotLineDistance(fd, value);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelRetractDistanceOffset(int fd, int value) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(value);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelRetractDistanceOffset, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelRetractDistanceOffset(fd, value);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelSetGapMechanicalError(int fd, int value1, int value2, int value3, int value4) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(value1);
+          _data.writeInt(value2);
+          _data.writeInt(value3);
+          _data.writeInt(value4);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelSetGapMechanicalError, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelSetGapMechanicalError(fd, value1, value2, value3, value4);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelSetPrinterMode(int fd, int mode) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(mode);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelSetPrinterMode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelSetPrinterMode(fd, mode);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public java.lang.String labelQueryInfo(int fd, java.lang.String code) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.lang.String _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(code);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelQueryInfo, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().labelQueryInfo(fd, code);
+          }
+          _reply.readException();
+          _result = _reply.readString();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public void labelQueryInfoCallback(int fd, java.lang.String code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(code);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelQueryInfoCallback, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelQueryInfoCallback(fd, code, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelRestoreDefaults(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelRestoreDefaults, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelRestoreDefaults(fd, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelPrintBitmap(int fd, android.graphics.Bitmap bitmap, int width, int height, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          if ((bitmap!=null)) {
+            _data.writeInt(1);
+            bitmap.writeToParcel(_data, 0);
+          }
+          else {
+            _data.writeInt(0);
+          }
+          _data.writeInt(width);
+          _data.writeInt(height);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelPrintBitmap, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelPrintBitmap(fd, bitmap, width, height, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void labelGetPrinterMode(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelGetPrinterMode, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().labelGetPrinterMode(fd, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
       public static com.imin.printer.INeoPrinterService sDefaultImpl;
     }
     static final int TRANSACTION_initPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
@@ -5138,6 +5995,27 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_getThresholdMS2 = (android.os.IBinder.FIRST_CALL_TRANSACTION + 133);
     static final int TRANSACTION_setThresholdMS2 = (android.os.IBinder.FIRST_CALL_TRANSACTION + 134);
     static final int TRANSACTION_resetThresholdMS2 = (android.os.IBinder.FIRST_CALL_TRANSACTION + 135);
+    static final int TRANSACTION_labelInitCanvas = (android.os.IBinder.FIRST_CALL_TRANSACTION + 136);
+    static final int TRANSACTION_labelAddText = (android.os.IBinder.FIRST_CALL_TRANSACTION + 137);
+    static final int TRANSACTION_labelAddBarcode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 138);
+    static final int TRANSACTION_labelAddQrCode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 139);
+    static final int TRANSACTION_labelAddBitmap = (android.os.IBinder.FIRST_CALL_TRANSACTION + 140);
+    static final int TRANSACTION_labelAddArea = (android.os.IBinder.FIRST_CALL_TRANSACTION + 141);
+    static final int TRANSACTION_labelPrintCanvas = (android.os.IBinder.FIRST_CALL_TRANSACTION + 142);
+    static final int TRANSACTION_getLabelBitmap = (android.os.IBinder.FIRST_CALL_TRANSACTION + 143);
+    static final int TRANSACTION_labelPaperLearning = (android.os.IBinder.FIRST_CALL_TRANSACTION + 144);
+    static final int TRANSACTION_labelGapSensorCalibration = (android.os.IBinder.FIRST_CALL_TRANSACTION + 145);
+    static final int TRANSACTION_labelTakePaperSensorLearning = (android.os.IBinder.FIRST_CALL_TRANSACTION + 146);
+    static final int TRANSACTION_labelSetTakePaperSensorThreshold = (android.os.IBinder.FIRST_CALL_TRANSACTION + 147);
+    static final int TRANSACTION_labelElectricToHotLineDistance = (android.os.IBinder.FIRST_CALL_TRANSACTION + 148);
+    static final int TRANSACTION_labelRetractDistanceOffset = (android.os.IBinder.FIRST_CALL_TRANSACTION + 149);
+    static final int TRANSACTION_labelSetGapMechanicalError = (android.os.IBinder.FIRST_CALL_TRANSACTION + 150);
+    static final int TRANSACTION_labelSetPrinterMode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 151);
+    static final int TRANSACTION_labelQueryInfo = (android.os.IBinder.FIRST_CALL_TRANSACTION + 152);
+    static final int TRANSACTION_labelQueryInfoCallback = (android.os.IBinder.FIRST_CALL_TRANSACTION + 153);
+    static final int TRANSACTION_labelRestoreDefaults = (android.os.IBinder.FIRST_CALL_TRANSACTION + 154);
+    static final int TRANSACTION_labelPrintBitmap = (android.os.IBinder.FIRST_CALL_TRANSACTION + 155);
+    static final int TRANSACTION_labelGetPrinterMode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 156);
     public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -5291,4 +6169,25 @@ public interface INeoPrinterService extends android.os.IInterface
   public void getThresholdMS2(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setThresholdMS2(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void resetThresholdMS2(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelInitCanvas(int fd, com.imin.printer.label.LabelCanvasStyle labelCanvasStyle) throws android.os.RemoteException;
+  public void labelAddText(int fd, java.lang.String text, com.imin.printer.label.LabelTextStyle labelTextStyle) throws android.os.RemoteException;
+  public void labelAddBarcode(int fd, java.lang.String codeData, com.imin.printer.label.LabelBarCodeStyle labelBarCodeStyle) throws android.os.RemoteException;
+  public void labelAddQrCode(int fd, java.lang.String qrData, com.imin.printer.label.LabelQrCodeStyle labelQrCodeStyle) throws android.os.RemoteException;
+  public void labelAddBitmap(int fd, android.graphics.Bitmap bitmap, com.imin.printer.label.LabelBitmapStyle labelBitmapStyle) throws android.os.RemoteException;
+  public void labelAddArea(int fd, com.imin.printer.label.LabelAreaStyle labelAreaStyle) throws android.os.RemoteException;
+  public void labelPrintCanvas(int fd, int count, com.imin.printer.ILabelPrintResult printResult) throws android.os.RemoteException;
+  public android.graphics.Bitmap getLabelBitmap(int fd) throws android.os.RemoteException;
+  public void labelPaperLearning(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelGapSensorCalibration(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelTakePaperSensorLearning(int fd, int value, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelSetTakePaperSensorThreshold(int fd, int value) throws android.os.RemoteException;
+  public void labelElectricToHotLineDistance(int fd, int value) throws android.os.RemoteException;
+  public void labelRetractDistanceOffset(int fd, int value) throws android.os.RemoteException;
+  public void labelSetGapMechanicalError(int fd, int value1, int value2, int value3, int value4) throws android.os.RemoteException;
+  public void labelSetPrinterMode(int fd, int mode) throws android.os.RemoteException;
+  public java.lang.String labelQueryInfo(int fd, java.lang.String code) throws android.os.RemoteException;
+  public void labelQueryInfoCallback(int fd, java.lang.String code, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelRestoreDefaults(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelPrintBitmap(int fd, android.graphics.Bitmap bitmap, int width, int height, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void labelGetPrinterMode(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
 }

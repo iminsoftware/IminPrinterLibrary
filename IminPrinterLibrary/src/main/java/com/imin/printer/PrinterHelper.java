@@ -5,6 +5,14 @@ import android.graphics.Bitmap;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.imin.printer.enums.LabelInfo;
+import com.imin.printer.label.LabelAreaStyle;
+import com.imin.printer.label.LabelBarCodeStyle;
+import com.imin.printer.label.LabelBitmapStyle;
+import com.imin.printer.label.LabelCanvasStyle;
+import com.imin.printer.label.LabelQrCodeStyle;
+import com.imin.printer.label.LabelTextStyle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -1295,6 +1303,197 @@ public class PrinterHelper {
         if (iNeoPrinterService == null)return;
         try {
             iNeoPrinterService.resetThresholdMS2(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelInitCanvas(LabelCanvasStyle labelCanvasStyle){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelInitCanvas(fd,labelCanvasStyle);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelAddText(String text, LabelTextStyle labelTestStyle){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelAddText(fd,text,labelTestStyle);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelAddBarCode(String codeData, LabelBarCodeStyle labelBarCodeStyle){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelAddBarcode(fd,codeData,labelBarCodeStyle);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelAddQrCode(String qrData, LabelQrCodeStyle labelQrCodeStyle){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelAddQrCode(fd,qrData,labelQrCodeStyle);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelAddBitmap(Bitmap bitmap, LabelBitmapStyle labelBitmapStyle){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelAddBitmap(fd,bitmap,labelBitmapStyle);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelAddArea(LabelAreaStyle labelAreaStyle){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelAddArea(fd,labelAreaStyle);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelPrintCanvas(int count, ILabelPrintResult iLabelPrintResult){
+        if (iNeoPrinterService == null)return;
+        try {
+            iNeoPrinterService.labelPrintCanvas(fd,count,iLabelPrintResult);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Bitmap getLabelBitmap(){
+        if (iNeoPrinterService == null)return null;
+        try {
+            return iNeoPrinterService.getLabelBitmap(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void labelPaperLearning(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelPaperLearning(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelGapSensorCalibration(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelGapSensorCalibration(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelTakePaperSensorLearning(int value,IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelTakePaperSensorLearning(fd,value,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelSetTakePaperSensorThreshold(int value){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelSetTakePaperSensorThreshold(fd,value);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelElectricToHotLineDistance(int value){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelElectricToHotLineDistance(fd,value);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelRetractDistanceOffset(int value){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelRetractDistanceOffset(fd,value);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelSetGapMechanicalError(int value1, int value2, int value3, int value4){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelSetGapMechanicalError(fd,value1,value2,value3,value4);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelSetPrinterMode(int mode){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelSetPrinterMode(fd,mode);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String labelQueryInfo(LabelInfo labelInfo){
+        if (iNeoPrinterService == null)return null;
+        try {
+            return iNeoPrinterService.labelQueryInfo(fd,labelInfo.name());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void labelQueryInfoCallback(LabelInfo labelInfo, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelQueryInfoCallback(fd,labelInfo.name(),callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelRestoreDefaults(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelRestoreDefaults(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelPrintBitmap(Bitmap bitmap, int width, int height, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelPrintBitmap(fd,bitmap,width,height,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void labelGetPrinterMode(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.labelGetPrinterMode(fd,callback);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
