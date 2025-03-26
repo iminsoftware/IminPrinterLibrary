@@ -12,12 +12,16 @@ public class LabelCanvasStyle implements Parcelable {
     private int height;
     private int posX;
     private int posY;
+    private boolean enableReverse;
+    private boolean enableMirror;
 
     private LabelCanvasStyle(){
         width = 0;
         height = 0;
         posX = 0;
         posY = 0;
+        enableReverse = false;
+        enableMirror = false;
     }
 
     protected LabelCanvasStyle(Parcel in) {
@@ -25,6 +29,8 @@ public class LabelCanvasStyle implements Parcelable {
         height = in.readInt();
         posX = in.readInt();
         posY = in.readInt();
+        enableReverse = in.readByte() != 0;
+        enableMirror = in.readByte() != 0;
     }
 
     @Override
@@ -33,6 +39,8 @@ public class LabelCanvasStyle implements Parcelable {
         dest.writeInt(height);
         dest.writeInt(posX);
         dest.writeInt(posY);
+        dest.writeByte((byte) (enableReverse ? 1 : 0));
+        dest.writeByte((byte) (enableMirror ? 1 : 0));
     }
 
     @Override
@@ -76,6 +84,16 @@ public class LabelCanvasStyle implements Parcelable {
         return this;
     }
 
+    public LabelCanvasStyle setEnableReverse(boolean enableReverse) {
+        this.enableReverse = enableReverse;
+        return this;
+    }
+
+    public LabelCanvasStyle setEnableMirror(boolean enableMirror) {
+        this.enableMirror = enableMirror;
+        return this;
+    }
+
     public int getWidth() {
         return width;
     }
@@ -92,14 +110,23 @@ public class LabelCanvasStyle implements Parcelable {
         return posY;
     }
 
+    public boolean isEnableReverse() {
+        return enableReverse;
+    }
+
+    public boolean isEnableMirror() {
+        return enableMirror;
+    }
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("LabelCanvasStyle{");
-        sb.append("width=").append(width);
-        sb.append(", height=").append(height);
-        sb.append(", posX=").append(posX);
-        sb.append(", posY=").append(posY);
-        sb.append('}');
-        return sb.toString();
+        return "LabelCanvasStyle{" +
+                "width=" + width +
+                ", height=" + height +
+                ", posX=" + posX +
+                ", posY=" + posY +
+                ", enableReverse=" + enableReverse +
+                ", enableMirror=" + enableMirror +
+                '}';
     }
 }

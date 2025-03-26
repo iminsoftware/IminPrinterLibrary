@@ -58,6 +58,9 @@ public class PrinterHelper {
      */
     public void deInitPrinterService(Context context){
         NeoPrinterManager.getInstance().unBindService(context,serviceConnectionCallback);
+        if(mInitPrinterCallback != null){
+            mInitPrinterCallback = null;
+        }
     }
 
     ServiceConnectionCallback serviceConnectionCallback = new ServiceConnectionCallback() {
@@ -1497,5 +1500,33 @@ public class PrinterHelper {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    public void resetPrinterParams(IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.resetPrinterParams(fd,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setLabelContinuousPrint(boolean enable){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.setLabelContinuousPrint(fd,enable);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Bitmap labelTemplatePrintTest(int posX,int width, int height){
+        if (iNeoPrinterService == null)return null;
+        try {
+            return iNeoPrinterService.labelTemplatePrintTest(fd,posX,width,height);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

@@ -507,6 +507,16 @@ public interface INeoPrinterService extends android.os.IInterface
     @Override public void labelGetPrinterMode(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
     {
     }
+    @Override public void resetPrinterParams(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void setLabelContinuousPrint(int fd, boolean enable) throws android.os.RemoteException
+    {
+    }
+    @Override public android.graphics.Bitmap labelTemplatePrintTest(int fd, int posX, int width, int height) throws android.os.RemoteException
+    {
+      return null;
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -2496,6 +2506,50 @@ public interface INeoPrinterService extends android.os.IInterface
           _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
           this.labelGetPrinterMode(_arg0, _arg1);
           reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_resetPrinterParams:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          com.imin.printer.IPrinterCallback _arg1;
+          _arg1 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.resetPrinterParams(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_setLabelContinuousPrint:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          boolean _arg1;
+          _arg1 = (0!=data.readInt());
+          this.setLabelContinuousPrint(_arg0, _arg1);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_labelTemplatePrintTest:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          int _arg1;
+          _arg1 = data.readInt();
+          int _arg2;
+          _arg2 = data.readInt();
+          int _arg3;
+          _arg3 = data.readInt();
+          android.graphics.Bitmap _result = this.labelTemplatePrintTest(_arg0, _arg1, _arg2, _arg3);
+          reply.writeNoException();
+          if ((_result!=null)) {
+            reply.writeInt(1);
+            _result.writeToParcel(reply, android.os.Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+          }
+          else {
+            reply.writeInt(0);
+          }
           return true;
         }
         default:
@@ -5857,6 +5911,75 @@ public interface INeoPrinterService extends android.os.IInterface
           _data.recycle();
         }
       }
+      @Override public void resetPrinterParams(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_resetPrinterParams, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().resetPrinterParams(fd, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void setLabelContinuousPrint(int fd, boolean enable) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(((enable)?(1):(0)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_setLabelContinuousPrint, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().setLabelContinuousPrint(fd, enable);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public android.graphics.Bitmap labelTemplatePrintTest(int fd, int posX, int width, int height) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        android.graphics.Bitmap _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeInt(posX);
+          _data.writeInt(width);
+          _data.writeInt(height);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_labelTemplatePrintTest, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().labelTemplatePrintTest(fd, posX, width, height);
+          }
+          _reply.readException();
+          if ((0!=_reply.readInt())) {
+            _result = android.graphics.Bitmap.CREATOR.createFromParcel(_reply);
+          }
+          else {
+            _result = null;
+          }
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
       public static com.imin.printer.INeoPrinterService sDefaultImpl;
     }
     static final int TRANSACTION_initPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
@@ -6016,6 +6139,9 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_labelRestoreDefaults = (android.os.IBinder.FIRST_CALL_TRANSACTION + 154);
     static final int TRANSACTION_labelPrintBitmap = (android.os.IBinder.FIRST_CALL_TRANSACTION + 155);
     static final int TRANSACTION_labelGetPrinterMode = (android.os.IBinder.FIRST_CALL_TRANSACTION + 156);
+    static final int TRANSACTION_resetPrinterParams = (android.os.IBinder.FIRST_CALL_TRANSACTION + 157);
+    static final int TRANSACTION_setLabelContinuousPrint = (android.os.IBinder.FIRST_CALL_TRANSACTION + 158);
+    static final int TRANSACTION_labelTemplatePrintTest = (android.os.IBinder.FIRST_CALL_TRANSACTION + 159);
     public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -6190,4 +6316,7 @@ public interface INeoPrinterService extends android.os.IInterface
   public void labelRestoreDefaults(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void labelPrintBitmap(int fd, android.graphics.Bitmap bitmap, int width, int height, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void labelGetPrinterMode(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void resetPrinterParams(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void setLabelContinuousPrint(int fd, boolean enable) throws android.os.RemoteException;
+  public android.graphics.Bitmap labelTemplatePrintTest(int fd, int posX, int width, int height) throws android.os.RemoteException;
 }
