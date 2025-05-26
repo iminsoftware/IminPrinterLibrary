@@ -517,6 +517,23 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return null;
     }
+    @Override public void setPrinterAction(int fd, java.lang.String keyName, java.lang.String keyValue, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void setPrinterActionList(int fd, java.lang.String keyName, java.util.List<java.lang.String> keyValue, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public void getPrinterInfo(int fd, java.lang.String keyName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+    {
+    }
+    @Override public java.util.List<java.lang.String> getPrinterInfoList(int fd, java.lang.String keyName) throws android.os.RemoteException
+    {
+      return null;
+    }
+    @Override public java.lang.String getPrinterInfoString(int fd, java.lang.String keyName) throws android.os.RemoteException
+    {
+      return null;
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -2550,6 +2567,73 @@ public interface INeoPrinterService extends android.os.IInterface
           else {
             reply.writeInt(0);
           }
+          return true;
+        }
+        case TRANSACTION_setPrinterAction:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          java.lang.String _arg2;
+          _arg2 = data.readString();
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.setPrinterAction(_arg0, _arg1, _arg2, _arg3);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_setPrinterActionList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          java.util.List<java.lang.String> _arg2;
+          _arg2 = data.createStringArrayList();
+          com.imin.printer.IPrinterCallback _arg3;
+          _arg3 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.setPrinterActionList(_arg0, _arg1, _arg2, _arg3);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_getPrinterInfo:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          com.imin.printer.IPrinterCallback _arg2;
+          _arg2 = com.imin.printer.IPrinterCallback.Stub.asInterface(data.readStrongBinder());
+          this.getPrinterInfo(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        case TRANSACTION_getPrinterInfoList:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          java.util.List<java.lang.String> _result = this.getPrinterInfoList(_arg0, _arg1);
+          reply.writeNoException();
+          reply.writeStringList(_result);
+          return true;
+        }
+        case TRANSACTION_getPrinterInfoString:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          java.lang.String _result = this.getPrinterInfoString(_arg0, _arg1);
+          reply.writeNoException();
+          reply.writeString(_result);
           return true;
         }
         default:
@@ -5980,6 +6064,115 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
+      @Override public void setPrinterAction(int fd, java.lang.String keyName, java.lang.String keyValue, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(keyName);
+          _data.writeString(keyValue);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_setPrinterAction, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().setPrinterAction(fd, keyName, keyValue, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void setPrinterActionList(int fd, java.lang.String keyName, java.util.List<java.lang.String> keyValue, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(keyName);
+          _data.writeStringList(keyValue);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_setPrinterActionList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().setPrinterActionList(fd, keyName, keyValue, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public void getPrinterInfo(int fd, java.lang.String keyName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(keyName);
+          _data.writeStrongBinder((((callback!=null))?(callback.asBinder()):(null)));
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterInfo, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().getPrinterInfo(fd, keyName, callback);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      @Override public java.util.List<java.lang.String> getPrinterInfoList(int fd, java.lang.String keyName) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.util.List<java.lang.String> _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(keyName);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterInfoList, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterInfoList(fd, keyName);
+          }
+          _reply.readException();
+          _result = _reply.createStringArrayList();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public java.lang.String getPrinterInfoString(int fd, java.lang.String keyName) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        java.lang.String _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          _data.writeString(keyName);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterInfoString, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterInfoString(fd, keyName);
+          }
+          _reply.readException();
+          _result = _reply.readString();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
       public static com.imin.printer.INeoPrinterService sDefaultImpl;
     }
     static final int TRANSACTION_initPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
@@ -6142,6 +6335,11 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_resetPrinterParams = (android.os.IBinder.FIRST_CALL_TRANSACTION + 157);
     static final int TRANSACTION_setLabelContinuousPrint = (android.os.IBinder.FIRST_CALL_TRANSACTION + 158);
     static final int TRANSACTION_labelTemplatePrintTest = (android.os.IBinder.FIRST_CALL_TRANSACTION + 159);
+    static final int TRANSACTION_setPrinterAction = (android.os.IBinder.FIRST_CALL_TRANSACTION + 160);
+    static final int TRANSACTION_setPrinterActionList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 161);
+    static final int TRANSACTION_getPrinterInfo = (android.os.IBinder.FIRST_CALL_TRANSACTION + 162);
+    static final int TRANSACTION_getPrinterInfoList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 163);
+    static final int TRANSACTION_getPrinterInfoString = (android.os.IBinder.FIRST_CALL_TRANSACTION + 164);
     public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -6319,4 +6517,9 @@ public interface INeoPrinterService extends android.os.IInterface
   public void resetPrinterParams(int fd, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public void setLabelContinuousPrint(int fd, boolean enable) throws android.os.RemoteException;
   public android.graphics.Bitmap labelTemplatePrintTest(int fd, int posX, int width, int height) throws android.os.RemoteException;
+  public void setPrinterAction(int fd, java.lang.String keyName, java.lang.String keyValue, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void setPrinterActionList(int fd, java.lang.String keyName, java.util.List<java.lang.String> keyValue, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public void getPrinterInfo(int fd, java.lang.String keyName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
+  public java.util.List<java.lang.String> getPrinterInfoList(int fd, java.lang.String keyName) throws android.os.RemoteException;
+  public java.lang.String getPrinterInfoString(int fd, java.lang.String keyName) throws android.os.RemoteException;
 }

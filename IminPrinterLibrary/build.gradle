@@ -43,7 +43,7 @@ dependencies {
  * 接口版本号
  */
 ext{
-    versionCode = 'V2.0.0.16'
+    versionCode = 'V2.0.0.17'
 }
 
 /**
@@ -99,7 +99,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.imin.printer'
                 artifactId = 'library'
-                version = 'V2.0.0.16'
+                version = 'V2.0.0.17'
             }
         }
     }

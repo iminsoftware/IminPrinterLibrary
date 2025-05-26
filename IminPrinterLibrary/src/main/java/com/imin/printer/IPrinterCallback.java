@@ -32,7 +32,7 @@ public interface IPrinterCallback extends android.os.IInterface
     }
     /**
        	* 返回打印机结果
-       	* code：	异常代码 0 成功 1 失败
+       	* code：	异常代码 1 成功 0 失败
        	* msg:	异常描述
        	*/
     @Override public void onPrintResult(int code, java.lang.String msg) throws android.os.RemoteException
@@ -203,7 +203,7 @@ public interface IPrinterCallback extends android.os.IInterface
       }
       /**
          	* 返回打印机结果
-         	* code：	异常代码 0 成功 1 失败
+         	* code：	异常代码 1 成功 0 失败
          	* msg:	异常描述
          	*/
       @Override public void onPrintResult(int code, java.lang.String msg) throws android.os.RemoteException
@@ -265,7 +265,7 @@ public interface IPrinterCallback extends android.os.IInterface
   public void onRaiseException(int code, java.lang.String msg) throws android.os.RemoteException;
   /**
      	* 返回打印机结果
-     	* code：	异常代码 0 成功 1 失败
+     	* code：	异常代码 1 成功 0 失败
      	* msg:	异常描述
      	*/
   public void onPrintResult(int code, java.lang.String msg) throws android.os.RemoteException;

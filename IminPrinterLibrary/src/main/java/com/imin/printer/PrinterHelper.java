@@ -1529,4 +1529,52 @@ public class PrinterHelper {
         }
         return null;
     }
+
+
+    public void setPrinterAction(String keyName, String keyValue, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.setPrinterAction(fd,keyName,keyValue,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setPrinterActionList(String keyName, List<String> keyValue, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.setPrinterActionList(fd,keyName,keyValue,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getPrinterInfo(String keyName, IPrinterCallback callback){
+        if (iNeoPrinterService == null)return ;
+        try {
+            iNeoPrinterService.getPrinterInfo(fd,keyName,callback);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<String> getPrinterInfoList(String keyName){
+        if (iNeoPrinterService == null)return null;
+        try {
+            return iNeoPrinterService.getPrinterInfoList(fd,keyName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getPrinterInfoString(String keyName){
+        if (iNeoPrinterService == null)return null;
+        try {
+            return iNeoPrinterService.getPrinterInfoString(fd,keyName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
