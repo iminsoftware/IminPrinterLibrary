@@ -3,12 +3,34 @@ plugins {
     id 'maven-publish'
 }
 
+/**
+ * 接口版本号
+ */
+ext{
+//    versionCode = 'V2.0.0.17'
+    versionCodeString = 'V2.0.0.18'
+    versionCodeNumber = 18  // 确保这个属性存在
+}
+
+
 android {
     compileSdk 33
 
     defaultConfig {
         minSdk 21
         targetSdk 33
+
+        // 使用根项目中的版本信息
+        versionCode project.ext.versionCodeNumber
+        versionName project.ext.versionCodeString
+
+        // 将版本字符串添加到 BuildConfig
+        buildConfigField "String", "VERSION_CODE", "\"${project.ext.versionCodeNumber}\""
+        // 将版本字符串添加到 BuildConfig
+        buildConfigField "String", "VERSION_CODE_STRING", "\"${project.ext.versionCodeString}\""
+
+//        // 可选：将版本信息添加到资源文件
+//        resValue "string", "version_code_string", project.ext.versionCodeString
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -28,6 +50,11 @@ android {
     lintOptions{
         disable'LongLogTag'
     }
+
+    buildFeatures {
+        aidl true
+    }
+    namespace 'com.imin.printer'
 }
 
 dependencies {
@@ -39,12 +66,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'*/
 }
 
-/**
- * 接口版本号
- */
-ext{
-    versionCode = 'V2.0.0.17'
-}
+
 
 /**
  * @return formattedDate
@@ -60,7 +82,7 @@ def getBuildTime() {
  * @return buildName
  */
 def getBuildName(boolean isRelease) {
-    def buildName = "iMinPrinter_SDK2_" +  ext.versionCode + "_" + getBuildTime()
+    def buildName = "iMinPrinter_SDK2_" +  ext.versionCodeString + "_" + getBuildTime()
     if(!isRelease) {
         buildName = buildName + "_debug"
     }
@@ -99,7 +121,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.imin.printer'
                 artifactId = 'library'
-                version = 'V2.0.0.17'
+                version = 'V2.0.0.18'
             }
         }
     }

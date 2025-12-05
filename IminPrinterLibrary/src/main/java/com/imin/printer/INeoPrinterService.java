@@ -534,6 +534,10 @@ public interface INeoPrinterService extends android.os.IInterface
     {
       return null;
     }
+    @Override public byte[] getPrinterTestData(int fd) throws android.os.RemoteException
+    {
+      return null;
+    }
     @Override
     public android.os.IBinder asBinder() {
       return null;
@@ -2634,6 +2638,16 @@ public interface INeoPrinterService extends android.os.IInterface
           java.lang.String _result = this.getPrinterInfoString(_arg0, _arg1);
           reply.writeNoException();
           reply.writeString(_result);
+          return true;
+        }
+        case TRANSACTION_getPrinterTestData:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          byte[] _result = this.getPrinterTestData(_arg0);
+          reply.writeNoException();
+          reply.writeByteArray(_result);
           return true;
         }
         default:
@@ -6173,6 +6187,27 @@ public interface INeoPrinterService extends android.os.IInterface
         }
         return _result;
       }
+      @Override public byte[] getPrinterTestData(int fd) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        byte[] _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(fd);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_getPrinterTestData, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            return getDefaultImpl().getPrinterTestData(fd);
+          }
+          _reply.readException();
+          _result = _reply.createByteArray();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
       public static com.imin.printer.INeoPrinterService sDefaultImpl;
     }
     static final int TRANSACTION_initPrinter = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
@@ -6340,6 +6375,7 @@ public interface INeoPrinterService extends android.os.IInterface
     static final int TRANSACTION_getPrinterInfo = (android.os.IBinder.FIRST_CALL_TRANSACTION + 162);
     static final int TRANSACTION_getPrinterInfoList = (android.os.IBinder.FIRST_CALL_TRANSACTION + 163);
     static final int TRANSACTION_getPrinterInfoString = (android.os.IBinder.FIRST_CALL_TRANSACTION + 164);
+    static final int TRANSACTION_getPrinterTestData = (android.os.IBinder.FIRST_CALL_TRANSACTION + 165);
     public static boolean setDefaultImpl(com.imin.printer.INeoPrinterService impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -6522,4 +6558,5 @@ public interface INeoPrinterService extends android.os.IInterface
   public void getPrinterInfo(int fd, java.lang.String keyName, com.imin.printer.IPrinterCallback callback) throws android.os.RemoteException;
   public java.util.List<java.lang.String> getPrinterInfoList(int fd, java.lang.String keyName) throws android.os.RemoteException;
   public java.lang.String getPrinterInfoString(int fd, java.lang.String keyName) throws android.os.RemoteException;
+  public byte[] getPrinterTestData(int fd) throws android.os.RemoteException;
 }

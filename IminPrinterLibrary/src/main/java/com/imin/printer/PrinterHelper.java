@@ -1577,4 +1577,23 @@ public class PrinterHelper {
         }
         return null;
     }
+
+    /**
+     * 3.45 获取开发包信息
+     * @return String
+     */
+    public static String getSDKVersionName() {
+        return BuildConfig.VERSION_CODE_STRING;
+    }
+
+    public byte[] getPrinterTestData(){
+        if (iNeoPrinterService == null)return null;
+        try {
+            return iNeoPrinterService.getPrinterTestData(fd);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
